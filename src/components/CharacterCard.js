@@ -15,7 +15,7 @@ const CharacterCard = (props) => {
   };
   return (
     <>
-      <Link to="/character/:characterId">
+      <Link to={`/character/${props.eachCharacterData.id}`}>
         <img
           alt={props.eachCharacterData.name}
           src={props.eachCharacterData.image}

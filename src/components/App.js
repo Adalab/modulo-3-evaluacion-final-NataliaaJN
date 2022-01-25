@@ -14,6 +14,7 @@ const App = () => {
   const [charactersData, setCharactersData] = useState([]);
   const [nameFilter, setNameFilter] = useState("");
   const [houseFilter, setHouseFilter] = useState("Gryffindor");
+  const [genderFilter, setGenderFilter] = useState("");
 
   // Effects
   // Cojo los datos del api
