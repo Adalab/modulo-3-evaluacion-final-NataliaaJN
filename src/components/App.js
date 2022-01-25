@@ -21,9 +21,16 @@ const App = () => {
   }, []);
 
   // Functions
-
-  const handleInputs = (value) => {
-    setNameFilter(value);
+  // El parámetro data es un objeto al que le voy a pasar:
+  // - un key, que es el nombre del input que voy a cambiar
+  // - un value, que es el valor que voy a asignar a ese key
+  const handleInputs = (data) => {
+    if (data.key === "name") {
+      // si el key del objeto data es "name"
+      setNameFilter(data.value); // cambio el nameFilter por el valor que recibe en el objeto data
+    } else{
+      setHouseFilter(data.value)
+    }
   };
 
   // Filtro los personajes
