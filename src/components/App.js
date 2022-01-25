@@ -5,12 +5,23 @@ import getApiData from "../services/api";
 import Filters from "./Filters";
 import ls from "../services/local-storage";
 import CharactersList from "./CharactersList";
+import CharacterDetail from "./CharacterDetail";
 
 const App = () => {
   // States
   const [charactersData, setCharactersData] = useState([]);
+  // const [filters, setFilters] = useState({
+  //   house: "Gryffindor",
+  //   name: "",
+  // })
+  // useEffect(() => {
+  //   getApiData(filters.house).then((data) => {
+  //     setCharactersData(data); // filtro los resultados del api
+  //   });
+  // }, [filters.house]);
+
   const [nameFilter, setNameFilter] = useState("");
-  const [houseFilter, setHouseFilter] = useState("gryffindor");
+  const [houseFilter, setHouseFilter] = useState("Gryffindor");
 
   // Effects
   // Cojo los datos del api
@@ -18,7 +29,7 @@ const App = () => {
     getApiData(houseFilter).then((data) => {
       setCharactersData(data); // filtro los resultados del api
     });
-  }, []);
+  }, [houseFilter]);
 
   // Functions
   // El parámetro data es un objeto al que le voy a pasar:
@@ -28,35 +39,47 @@ const App = () => {
     if (data.key === "name") {
       // si el key del objeto data es "name"
       setNameFilter(data.value); // cambio el nameFilter por el valor que recibe en el objeto data
-    } else{
-      setHouseFilter(data.value)
+    } else {
+      setHouseFilter(data.value);
     }
   };
 
   // Filtro los personajes
-  const filteredCharacter = charactersData.filter((eachCharacterData) => {
-    return eachCharacterData.name
-      .toLocaleLowerCase()
-      .includes(nameFilter.toLocaleLowerCase());
-  });
+  const filteredCharacter = charactersData
+    .filter((eachCharacterData) => {
+      return eachCharacterData.name
+        .toLocaleLowerCase()
+        .includes(nameFilter.toLocaleLowerCase());
+    })
+    .filter(
+      (eachCharacterData) => eachCharacterData.house === houseFilter
 
+      // if (houseFilter === "Gryffindor") {
+      //   return true;
+      // } else {
+      //   return eachCharacterData.house === houseFilter;
+      // }
+
+    );
+  console.log(filteredCharacter);
   return (
     <div>
-      <h1>Harry Potter</h1>
+      <header>
+        <h1>Harry Potter</h1>
+      </header>
       <main>
-        <Filters
-          nameFilter={nameFilter}
-          houseFilter={houseFilter}
-          handleInputs={handleInputs}
-        />
-        {/* en vez de pasarle los datos de todos los personajes, se lo paso de los personajes ya filtrados */}
-        <CharactersList charactersData={filteredCharacter} />
-
-        {/* <Switch>
+        <Switch>
           <Route exact path="/">
-            <h2>Inicio</h2>
+            <Filters
+              nameFilter={nameFilter}
+              houseFilter={houseFilter}
+              handleInputs={handleInputs}
+            />
+            {/* en vez de pasarle los datos de todos los personajes, se lo paso de los personajes ya filtrados */}
+            <CharactersList charactersData={filteredCharacter} />
           </Route>
-        </Switch> */}
+          {/* <CharacterDetail /> */}
+        </Switch>
       </main>
     </div>
   );

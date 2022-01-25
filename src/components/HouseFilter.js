@@ -1,6 +1,9 @@
 const HouseFilter = (props) => {
     const handleChangeHouseSelect = (ev) => {
-        props.handleInputs(ev.currentTarget.value);
+        props.handleInputs({
+            key: "house",
+            value: ev.target.value,
+        });
     };
   return (
     <label htmlFor="house">
@@ -11,10 +14,10 @@ const HouseFilter = (props) => {
         onChange={handleChangeHouseSelect}
         value={props.houseFilter}
       >
-        <option value="gryffindor">Gryffindor</option>
-        <option value="slytherin">Slytherin</option>
-        <option value="hufflepuff">Hufflepuff</option>
-        <option value="ravenclaw">Ravenclaw</option>
+        <option value="Gryffindor">Gryffindor</option>
+        <option value="Slytherin">Slytherin</option>
+        <option value="Hufflepuff">Hufflepuff</option>
+        <option value="Ravenclaw">Ravenclaw</option>
       </select>
     </label>
   );
