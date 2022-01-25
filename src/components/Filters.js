@@ -1,17 +1,15 @@
+import HouseFilter from "./HouseFilter";
+import NameFilter from "./NameFilter";
+
 const Filters = () => {
-    return(
-        <section>
-          <form>
-            <input type="text" />
-            <select>
-              <option value="gryffindor">Gryffindor</option>
-              <option value="slytherin">Slytherin</option>
-              <option value="hufflepuff">Hufflepuff</option>
-              <option value="ravenclaw">Ravenclaw</option>
-            </select>
-          </form>
-        </section>
-    )
+  return (
+    <section>
+      <form>
+        <NameFilter />
+        <HouseFilter />
+      </form>
+    </section>
+  );
 };
 
 export default Filters;
