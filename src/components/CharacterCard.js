@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CharacterCard = (props) => {
   const getSpecies = () => {
     // species: human, half-giant, werewolf, ghost
@@ -13,12 +15,14 @@ const CharacterCard = (props) => {
   };
   return (
     <>
-      <img
-        alt={props.eachCharacterData.name}
-        src={props.eachCharacterData.image}
-      />
-      <h2>{props.eachCharacterData.name}</h2>
-      <p>{getSpecies()}</p>
+      <Link to="/character/:characterId">
+        <img
+          alt={props.eachCharacterData.name}
+          src={props.eachCharacterData.image}
+        />
+        <h2>{props.eachCharacterData.name}</h2>
+        <p>{getSpecies()}</p>
+      </Link>
     </>
   );
 };

@@ -1,25 +1,17 @@
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
-import { Route, Switch, NavLink } from "react-router-dom";
+import { Route, Switch, Link, NavLink } from "react-router-dom";
 import getApiData from "../services/api";
-import Filters from "./Filters";
 import ls from "../services/local-storage";
+
+import Filters from "./Filters";
 import CharactersList from "./CharactersList";
 import CharacterDetail from "./CharacterDetail";
+import NotFound from "./NotFound";
 
 const App = () => {
   // States
   const [charactersData, setCharactersData] = useState([]);
-  // const [filters, setFilters] = useState({
-  //   house: "Gryffindor",
-  //   name: "",
-  // })
-  // useEffect(() => {
-  //   getApiData(filters.house).then((data) => {
-  //     setCharactersData(data); // filtro los resultados del api
-  //   });
-  // }, [filters.house]);
-
   const [nameFilter, setNameFilter] = useState("");
   const [houseFilter, setHouseFilter] = useState("Gryffindor");
 
@@ -51,17 +43,18 @@ const App = () => {
         .toLocaleLowerCase()
         .includes(nameFilter.toLocaleLowerCase());
     })
-    .filter(
-      (eachCharacterData) => eachCharacterData.house === houseFilter
+    .filter((eachCharacterData) => eachCharacterData.house === houseFilter);
+  // console.log(filteredCharacter);
 
-      // if (houseFilter === "Gryffindor") {
-      //   return true;
-      // } else {
-      //   return eachCharacterData.house === houseFilter;
-      // }
-
+  const renderCharacterDetail = (props) => {
+    const routeId = props.match.params.characterId;
+    const foundCharacter = charactersData.find(
+      (characterData) => characterData.id === routeId
     );
-  console.log(filteredCharacter);
+    console.log(foundCharacter);
+    return <CharacterDetail character={foundCharacter} />;
+  };
+
   return (
     <div>
       <header>
@@ -78,7 +71,11 @@ const App = () => {
             {/* en vez de pasarle los datos de todos los personajes, se lo paso de los personajes ya filtrados */}
             <CharactersList charactersData={filteredCharacter} />
           </Route>
-          {/* <CharacterDetail /> */}
+
+          <Route
+            path="/character/:characterId"
+            render={renderCharacterDetail}
+          />
         </Switch>
       </main>
     </div>
