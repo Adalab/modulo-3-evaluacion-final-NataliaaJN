@@ -37,12 +37,26 @@ const App = () => {
     }
   };
 
+  const resetFilters= () => {
+    setCharactersData([]);
+    setNameFilter("");
+    setHouseFilter("");
+  };
+
   // Filtro los personajes
   const filteredCharacter = charactersData
     .filter((eachCharacterData) => {
       return eachCharacterData.name
         .toLocaleLowerCase()
         .includes(nameFilter.toLocaleLowerCase());
+    }) // ordenar alfabéticamente el array filtrado
+    .sort(function (a, b) {
+      if (a.name < b.name) {
+        return -1; //  es mayor que 0, se sitúa b en un indice menor que a -> b viene primero
+      } else if (a.name > b.name) {
+        return 1; //lo que retorna es menor que 0-> se sitúa a en un indice menor que b -> a viene primero.
+      }
+      return 0; // si retorna 0, se deja a y b sin cambios entre ellos, pero ordenados con respecto a todos los elementos diferentes
     })
     .filter((eachCharacterData) => eachCharacterData.house === houseFilter);
   // console.log(filteredCharacter);
@@ -52,8 +66,12 @@ const App = () => {
     const foundCharacter = charactersData.find(
       (characterData) => characterData.id === routeId
     );
-    console.log(foundCharacter);
-    return <CharacterDetail character={foundCharacter} />;
+    return !foundCharacter ? (
+      <NotFound />
+    ) : (
+      <CharacterDetail character={foundCharacter} />
+    );
+    
   };
 
   return (
@@ -68,6 +86,7 @@ const App = () => {
               nameFilter={nameFilter}
               houseFilter={houseFilter}
               handleInputs={handleInputs}
+              resetFilters={resetFilters}
             />
             {/* en vez de pasarle los datos de todos los personajes, se lo paso de los personajes ya filtrados */}
             <CharactersList charactersData={filteredCharacter} />
