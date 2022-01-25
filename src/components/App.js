@@ -2,7 +2,9 @@ import "../styles/App.scss";
 import { useState, useEffect } from "react";
 import { Route, Switch, NavLink } from "react-router-dom";
 import getApiData from "../services/api";
+import Filters from "./Filters"
 import ls from "../services/local-storage";
+import CharactersList from "./CharactersList";
 
 const App = () => {
   // States
@@ -24,26 +26,9 @@ const App = () => {
     <div>
       <h1>Harry Potter</h1>
       <main>
-        <section>
-          <form>
-            <input type="text" />
-            <select>
-              <option value="gryffindor">Gryffindor</option>
-              <option value="slytherin">Slytherin</option>
-              <option value="hufflepuff">Hufflepuff</option>
-              <option value="ravenclaw">Ravenclaw</option>
-            </select>
-          </form>
-        </section>
-        <section>
-          <ul>
-            <li>
-              <img alt="imagen"/>
-              <h2>Nombre</h2>
-              <h3>Especie</h3>
-            </li>
-          </ul>
-        </section>
+        <Filters />
+        <CharactersList charactersData={charactersData} />
+        
 
         {/* <Switch>
           <Route exact path="/">

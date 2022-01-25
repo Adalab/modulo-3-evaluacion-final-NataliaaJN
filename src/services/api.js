@@ -6,7 +6,7 @@ const getApiData = (house) => {
     .then((apiData) => {
       const cleanApiData = apiData.map((eachApiData) => {
         return {
-          photo: eachApiData.image, //: https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter
+          image: eachApiData.image, //: https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter
           name: eachApiData.name,
           alternate_names: eachApiData.alternate_names,
           status: eachApiData.alive,
