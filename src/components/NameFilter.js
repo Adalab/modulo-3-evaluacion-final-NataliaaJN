@@ -1,4 +1,7 @@
-const NameFilter = () => {
+const NameFilter = (props) => {
+    const handleChangeNameInput= (ev) => {
+        props.handleInputs(ev.currentTarget.value)
+    };
     return(
         <label htmlFor="name">
           Buscar por personaje:
@@ -6,8 +9,8 @@ const NameFilter = () => {
             type="text"
             name="name"
             id="name"
-            // value={props.filterName}
-            // onChange={handleInput}
+            value={props.filterName}
+            onChange={handleChangeNameInput}
           />
         </label>
     )
