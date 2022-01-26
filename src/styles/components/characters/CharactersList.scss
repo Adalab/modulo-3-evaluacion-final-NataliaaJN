@@ -1,0 +1,38 @@
+.charactersListContainer {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+
+  &__charactersList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-row-gap: 50px;
+      grid-column-gap: 50px;
+    }
+
+    &--item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      @media (min-width: 768px) {
+          height: 550px;
+        margin-bottom: 0;
+        padding: 20px 10px;
+        border-radius: 10px;
+        background-color: rgba(75, 11, 11, 0.822);
+        //background-color: rgb(95, 20, 20);
+        box-shadow: 1px 1px 6px 4px rgb(224, 188, 23);
+        
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/components/characters/CharacterCard.scss";
 
 const CharacterCard = (props) => {
   const getSpecies = () => {
@@ -15,13 +16,14 @@ const CharacterCard = (props) => {
   };
   return (
     <>
-      <Link to={`/character/${props.eachCharacterData.id}`}>
-        <img
+      <Link className="cardLinkContainer" to={`/character/${props.eachCharacterData.id}`}>
+        <div className="cardLinkContainer__cardImageContainer">
+        <img className="cardLinkContainer__cardImageContainer--cardImage"
           alt={props.eachCharacterData.name}
           src={props.eachCharacterData.image}
-        />
-        <h2>{props.eachCharacterData.name}</h2>
-        <p>{getSpecies()}</p>
+        /></div>
+        <h2 className="cardLinkContainer__cardName">{props.eachCharacterData.name}</h2>
+        <p className="cardLinkContainer__cardSpecies">{getSpecies()}</p>
       </Link>
     </>
   );

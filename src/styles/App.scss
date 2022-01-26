@@ -1,0 +1,9 @@
+@import "./core/reset";
+@import "./core/variables";
+
+.app {
+  //background-color: rgb(101, 101, 138);
+  background-color: rgb(100, 25, 18);
+  font-family: $mainFontFamily;
+  padding: 40px;
+}

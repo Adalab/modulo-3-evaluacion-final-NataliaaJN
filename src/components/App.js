@@ -112,10 +112,10 @@ const App = () => {
   //                          RENDER                  //
 
   return (
-    <div>
+    <div className="app">
       <Header />
      
-      <main>
+      <main className="main">
         <Switch>
           <Route exact path="/">
             <Filters

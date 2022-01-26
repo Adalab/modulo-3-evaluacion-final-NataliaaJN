@@ -1,3 +1,4 @@
+import "../styles/components/form/GenderFilter.scss";
 const GenderFilter = (props) => {
   const handleChangeGenderFilter = (ev) => {
     props.handleInputs({
@@ -8,6 +9,7 @@ const GenderFilter = (props) => {
   return (
     <label htmlFor="gender">{props.label}
       <input
+      className=""
         type="radio"
         name="gender"
         id="gender"

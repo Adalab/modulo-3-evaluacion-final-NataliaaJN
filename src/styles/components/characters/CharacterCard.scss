@@ -1,0 +1,29 @@
+@import "../../core/variables";
+.cardLinkContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  &__cardImageContainer {
+    width: 250px;
+    //border: 3px solid rgb(224, 188, 23);
+    box-shadow: 2px 2px 5px $mainColor;
+    margin-bottom: 15px;
+    &--cardImage {
+      width: 100%;
+    }
+  }
+
+  &__cardName {
+    font-family: $cardsTitleFont;
+    letter-spacing: 3px;
+    margin-bottom: 2px;
+    color: $mainFontColor;
+    text-shadow: 1px black;
+  }
+  &__cardSpecies{
+    color: rgb(230, 168, 36);
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}

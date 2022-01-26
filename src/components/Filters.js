@@ -1,3 +1,4 @@
+import "../styles/components/form/Filters.scss";
 import ButtonResetFilters from "./ButtonResetFilters";
 import GenderFilter from "./GenderFilter";
 import HouseFilter from "./HouseFilter";
@@ -10,8 +11,8 @@ const Filters = (props) => {
   }
   return (
     <section>
-      <form onSubmit = {handleSubmit} >
-        <ButtonResetFilters resetFilters={props.resetFilters} />
+      <form className="form" onSubmit = {handleSubmit} >
+        
         <NameFilter
           nameFilter={props.nameFilter}
           handleInputs={props.handleInputs}
@@ -39,6 +40,8 @@ const Filters = (props) => {
           label="Mujer"
           gender="female"
         />
+        
+        <ButtonResetFilters resetFilters={props.resetFilters} />
         
       </form>
     </section>
