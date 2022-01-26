@@ -24,7 +24,6 @@ const App = () => {
     });
   }, [houseFilter]);
 
-
   //                           FUNCTIONS                            //
 
   // El parámetro data es un objeto al que le voy a pasar:
@@ -33,7 +32,7 @@ const App = () => {
   const handleInputs = (data) => {
     if (data.key === "name") {
       // si el key del objeto data es "name"
-      setNameFilter(data.value); // cambio el nameFilter por el valor que recibe en el objeto data
+      setNameFilter(data.value.trim()); // cambio el nameFilter por el valor que recibe en el objeto data y utilizo la función trim() para que el usuario no pueda meter espacios en blanco al principio
     }
     if (data.key === "house") {
       // si el key del objeto data es "name"
@@ -66,8 +65,27 @@ const App = () => {
       }
       return 0; // si retorna 0, se deja a y b sin cambios entre ellos, pero ordenados con respecto a todos los elementos diferentes
     });
-    
 
+  // Pintar resultados
+  const renderSearchResults = () => {
+    if (!nameFilter.trim()) {
+      return (
+        <>
+          <p>Introduce una búsqueda válida</p>
+          <CharactersList charactersData={filteredCharacter} />
+        </>
+      );
+    } else if (nameFilter !== "" && filteredCharacter.length === 0) {
+      return (
+        <p>No se han encontrado personajes que coincidan con {nameFilter}</p>
+      );
+    } else {
+      {
+        /* en vez de pasarle los datos de todos los personajes, se lo paso de los personajes ya filtrados */
+      }
+      return <CharactersList charactersData={filteredCharacter} />;
+    }
+  };
 
   // Ir a la página con información detallada de cada personaje
   const renderCharacterDetail = (props) => {
@@ -75,7 +93,7 @@ const App = () => {
     const foundCharacter = charactersData.find(
       (characterData) => characterData.id === routeId
     );
-    return !foundCharacter ? (
+    return foundCharacter === undefined ? (
       <NotFound />
     ) : (
       <CharacterDetail character={foundCharacter} />
@@ -108,8 +126,7 @@ const App = () => {
               handleInputs={handleInputs}
               resetFilters={resetFilters}
             />
-            {/* en vez de pasarle los datos de todos los personajes, se lo paso de los personajes ya filtrados */}
-            <CharactersList charactersData={filteredCharacter} />
+            {renderSearchResults()}
           </Route>
 
           <Route
