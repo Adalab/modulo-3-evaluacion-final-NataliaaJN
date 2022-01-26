@@ -1,4 +1,5 @@
 import ButtonResetFilters from "./ButtonResetFilters";
+import GenderFilter from "./GenderFilter";
 import HouseFilter from "./HouseFilter";
 import NameFilter from "./NameFilter";
 
@@ -14,6 +15,24 @@ const Filters = (props) => {
         <HouseFilter
           houseFilter={props.houseFilter}
           handleInputs={props.handleInputs}
+        />
+        <GenderFilter
+          genderFilter={props.genderFilter}
+          handleInputs={props.handleInputs}
+          label="Hombre"
+          gender="male"
+        />
+        <GenderFilter
+          genderFilter={props.genderFilter}
+          handleInputs={props.handleInputs}
+          label="Mujer"
+          gender="female"
+        />
+        <GenderFilter
+          genderFilter={props.genderFilter}
+          handleInputs={props.handleInputs}
+          label="Todos"
+          gender="all"
         />
       </form>
     </section>

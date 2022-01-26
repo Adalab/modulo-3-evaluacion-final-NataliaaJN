@@ -14,7 +14,7 @@ const App = () => {
   const [charactersData, setCharactersData] = useState([]);
   const [nameFilter, setNameFilter] = useState("");
   const [houseFilter, setHouseFilter] = useState("Gryffindor");
-  const [genderFilter, setGenderFilter] = useState("");
+  const [genderFilter, setGenderFilter] = useState("all");
 
   // Effects
   // Cojo los datos del api
@@ -32,12 +32,16 @@ const App = () => {
     if (data.key === "name") {
       // si el key del objeto data es "name"
       setNameFilter(data.value); // cambio el nameFilter por el valor que recibe en el objeto data
+    }
+    if (data.key === "house") {
+      // si el key del objeto data es "name"
+      setHouseFilter(data.value); // cambio el nameFilter por el valor que recibe en el objeto data
     } else {
-      setHouseFilter(data.value);
+      setGenderFilter(data.value);
     }
   };
 
-  const resetFilters= () => {
+  const resetFilters = () => {
     setCharactersData([]);
     setNameFilter("");
     setHouseFilter("");
@@ -50,6 +54,10 @@ const App = () => {
         .toLocaleLowerCase()
         .includes(nameFilter.toLocaleLowerCase());
     }) // ordenar alfabéticamente el array filtrado
+    .filter((eachCharacterData) => eachCharacterData.house === houseFilter)
+    .filter((eachCharacterData) =>
+      genderFilter === "all" ? true : eachCharacterData.gender === genderFilter
+    )
     .sort(function (a, b) {
       if (a.name < b.name) {
         return -1; //  es mayor que 0, se sitúa b en un indice menor que a -> b viene primero
@@ -57,8 +65,7 @@ const App = () => {
         return 1; //lo que retorna es menor que 0-> se sitúa a en un indice menor que b -> a viene primero.
       }
       return 0; // si retorna 0, se deja a y b sin cambios entre ellos, pero ordenados con respecto a todos los elementos diferentes
-    })
-    .filter((eachCharacterData) => eachCharacterData.house === houseFilter);
+    });
   // console.log(filteredCharacter);
 
   const renderCharacterDetail = (props) => {
@@ -71,7 +78,6 @@ const App = () => {
     ) : (
       <CharacterDetail character={foundCharacter} />
     );
-    
   };
 
   return (
@@ -85,6 +91,7 @@ const App = () => {
             <Filters
               nameFilter={nameFilter}
               houseFilter={houseFilter}
+              genderFilter={genderFilter}
               handleInputs={handleInputs}
               resetFilters={resetFilters}
             />
