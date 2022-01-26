@@ -13,17 +13,30 @@ import Header from "./Header";
 const App = () => {
   //                           STATES                               //
   const [charactersData, setCharactersData] = useState([]);
-  const [nameFilter, setNameFilter] = useState("");
-  const [houseFilter, setHouseFilter] = useState("Gryffindor");
-  const [genderFilter, setGenderFilter] = useState("all");
+  const [filteredCharacter, setFilteredCharacter] = useState([]);
+  const [nameFilter, setNameFilter] = useState(ls.get("nameFilter", ""));
+  const [houseFilter, setHouseFilter] = useState(
+    ls.get("houseFilter", "Gryffindor")
+  );
+  const [genderFilter, setGenderFilter] = useState(
+    ls.get("genderFilter", "all")
+  );
 
   //                           EFFECTS                              //
   // Cojo los datos del api
   useEffect(() => {
     getApiData(houseFilter).then((data) => {
       setCharactersData(data); // filtro los resultados del api
+      filterCharacters(data);
     });
   }, [houseFilter]);
+
+  useEffect(() => {
+    ls.set("nameFilter", nameFilter);
+    ls.set("houseFilter", houseFilter);
+    ls.set("genderFilter", genderFilter);
+    filterCharacters(charactersData);
+  }, [nameFilter, houseFilter, genderFilter]);
 
   //                           FUNCTIONS                            //
 
@@ -48,25 +61,22 @@ const App = () => {
   // };
 
   // Filtro los personajes
-  const filteredCharacter = charactersData
-    .filter((eachCharacterData) => {
-      return eachCharacterData.name
-        .toLocaleLowerCase()
-        .includes(nameFilter.toLocaleLowerCase());
-    }) // ordenar alfabéticamente el array filtrado
-    .filter((eachCharacterData) => eachCharacterData.house === houseFilter)
-    .filter((eachCharacterData) =>
-      genderFilter === "all" ? true : eachCharacterData.gender === genderFilter
-    )
-    .sort(function (a, b) {
-      if (a.name < b.name) {
-        return -1; //  es mayor que 0, se sitúa b en un indice menor que a -> b viene primero
-      } else if (a.name > b.name) {
-        return 1; //lo que retorna es menor que 0-> se sitúa a en un indice menor que b -> a viene primero.
-      }
-      return 0; // si retorna 0, se deja a y b sin cambios entre ellos, pero ordenados con respecto a todos los elementos diferentes
-    });
-
+  const filterCharacters = (currentCharactersData) => {
+    const newFilteredCharacter= currentCharactersData
+      .filter((eachCharacterData) => {
+        return eachCharacterData.name
+          .toLocaleLowerCase()
+          .includes(nameFilter.toLocaleLowerCase());
+      }) // ordenar alfabéticamente el array filtrado
+      .filter((eachCharacterData) => eachCharacterData.house === houseFilter)
+      .filter((eachCharacterData) =>
+        genderFilter === "all"
+          ? true
+          : eachCharacterData.gender === genderFilter
+      )
+      .sort((a, b) => a.name.localeCompare(b.name));
+      setFilteredCharacter(newFilteredCharacter);
+  };
   // Pintar resultados
   const renderSearchResults = () => {
     if (!nameFilter.trim()) {
@@ -103,6 +113,7 @@ const App = () => {
 
   // Eliminar filtros
   const resetFilters = (ev) => {
+    console.log("reset");
     ev.preventDefault();
     setNameFilter("");
     setHouseFilter("Gryffindor");
@@ -114,7 +125,7 @@ const App = () => {
   return (
     <div className="app">
       <Header />
-     
+
       <main className="main">
         <Switch>
           <Route exact path="/">
@@ -122,7 +133,7 @@ const App = () => {
               nameFilter={nameFilter}
               houseFilter={houseFilter}
               genderFilter={genderFilter}
-              // handleForm={handleForm}
+              //  handleForm={handleForm}
               handleInputs={handleInputs}
               resetFilters={resetFilters}
             />

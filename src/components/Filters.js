@@ -6,7 +6,8 @@ import NameFilter from "./NameFilter";
 
 const Filters = (props) => {
   const handleSubmit = (ev) => {
-    // props.handleForm(ev)
+    //props.handleForm(ev)
+    console.log("Hola");
     ev.preventDefault();
   };
   return (
@@ -42,7 +43,7 @@ const Filters = (props) => {
             gender="female"
           />
         </div>
-        <ButtonResetFilters resetFilters={props.resetFilters} />
+      <ButtonResetFilters resetFilters={props.resetFilters} />
       </form>
     </section>
   );

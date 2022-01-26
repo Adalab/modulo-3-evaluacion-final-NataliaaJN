@@ -1,6 +1,11 @@
 import "../styles/components/form/NameFilter.scss";
 const NameFilter = (props) => {
   const handleChangeNameInput = (ev) => {
+    //if (ev.keyCode === 13) {
+      ev.preventDefault();
+      console.log(ev);
+    //}
+
     props.handleInputs({
       key: "name",
       value: ev.currentTarget.value,
@@ -10,12 +15,13 @@ const NameFilter = (props) => {
     <label className="form__nameLabel" htmlFor="name">
       Buscar por personaje:
       <input
-      className="form__nameLabel--input"
-        type="text"
+        className="form__nameLabel--input"
+        type="search"
         name="name"
         id="name"
         value={props.nameFilter}
-        onChange={handleChangeNameInput}
+       onChange={handleChangeNameInput}
+        onKeyUp={(ev)=> ev.preventDefault()}
       />
     </label>
   );
