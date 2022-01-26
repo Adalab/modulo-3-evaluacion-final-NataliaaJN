@@ -8,6 +8,7 @@ import Filters from "./Filters";
 import CharactersList from "./CharactersList";
 import CharacterDetail from "./CharacterDetail";
 import NotFound from "./NotFound";
+import Header from "./Header";
 
 const App = () => {
   //                           STATES                               //
@@ -112,9 +113,8 @@ const App = () => {
 
   return (
     <div>
-      <header>
-        <h1>Harry Potter</h1>
-      </header>
+      <Header />
+     
       <main>
         <Switch>
           <Route exact path="/">
