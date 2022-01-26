@@ -10,13 +10,13 @@ import CharacterDetail from "./CharacterDetail";
 import NotFound from "./NotFound";
 
 const App = () => {
-  // States
+  //                           STATES                               //
   const [charactersData, setCharactersData] = useState([]);
   const [nameFilter, setNameFilter] = useState("");
   const [houseFilter, setHouseFilter] = useState("Gryffindor");
   const [genderFilter, setGenderFilter] = useState("all");
 
-  // Effects
+  //                           EFFECTS                              //
   // Cojo los datos del api
   useEffect(() => {
     getApiData(houseFilter).then((data) => {
@@ -24,7 +24,8 @@ const App = () => {
     });
   }, [houseFilter]);
 
-  // Functions
+
+  //                           FUNCTIONS                            //
 
   // El parámetro data es un objeto al que le voy a pasar:
   // - un key, que es el nombre del input que voy a cambiar
@@ -65,8 +66,10 @@ const App = () => {
       }
       return 0; // si retorna 0, se deja a y b sin cambios entre ellos, pero ordenados con respecto a todos los elementos diferentes
     });
-  // console.log(filteredCharacter);
+    
 
+
+  // Ir a la página con información detallada de cada personaje
   const renderCharacterDetail = (props) => {
     const routeId = props.match.params.characterId;
     const foundCharacter = charactersData.find(
@@ -79,12 +82,15 @@ const App = () => {
     );
   };
 
+  // Eliminar filtros
   const resetFilters = (ev) => {
     ev.preventDefault();
     setNameFilter("");
     setHouseFilter("Gryffindor");
     setGenderFilter("all");
   };
+
+  //                          RENDER                  //
 
   return (
     <div>
