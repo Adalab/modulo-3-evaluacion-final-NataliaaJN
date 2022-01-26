@@ -11,7 +11,6 @@ const Filters = (props) => {
   return (
     <section>
       <form onSubmit = {handleSubmit} >
-      {/* <form> */}
         <ButtonResetFilters resetFilters={props.resetFilters} />
         <NameFilter
           nameFilter={props.nameFilter}
@@ -20,6 +19,13 @@ const Filters = (props) => {
         <HouseFilter
           houseFilter={props.houseFilter}
           handleInputs={props.handleInputs}
+        />
+
+        <GenderFilter
+          genderFilter={props.genderFilter}
+          handleInputs={props.handleInputs}
+          label="Todos"
+          gender="all"
         />
         <GenderFilter
           genderFilter={props.genderFilter}
@@ -33,12 +39,7 @@ const Filters = (props) => {
           label="Mujer"
           gender="female"
         />
-        <GenderFilter
-          genderFilter={props.genderFilter}
-          handleInputs={props.handleInputs}
-          label="Todos"
-          gender="all"
-        />
+        
       </form>
     </section>
   );

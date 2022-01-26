@@ -13,9 +13,6 @@ const get = (key, defaultValue) => {
     localStorage.setItem(key, localStorageData);
   };
 
-    
-
-
   // Creamos un objeto temporal que es el que queremos exportar 
   const objectToExport = {
     get: get, //propiedad get cuyo valor es la función get

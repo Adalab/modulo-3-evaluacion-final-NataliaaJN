@@ -32,7 +32,7 @@ const App = () => {
   const handleInputs = (data) => {
     if (data.key === "name") {
       // si el key del objeto data es "name"
-      setNameFilter(data.value.trim()); // cambio el nameFilter por el valor que recibe en el objeto data y utilizo la función trim() para que el usuario no pueda meter espacios en blanco al principio
+      setNameFilter(data.value.trimStart()); // cambio el nameFilter por el valor que recibe en el objeto data y utilizo la función trim() para que el usuario no pueda meter espacios en blanco al principio
     }
     if (data.key === "house") {
       // si el key del objeto data es "name"
