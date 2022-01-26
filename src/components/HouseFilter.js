@@ -1,3 +1,4 @@
+import "../styles/components/form/HouseFilter.scss";
 const HouseFilter = (props) => {
     const handleChangeHouseSelect = (ev) => {
         props.handleInputs({
@@ -6,9 +7,10 @@ const HouseFilter = (props) => {
         });
     };
   return (
-    <label htmlFor="house">
+    <label className="form__houseLabel" htmlFor="house">
       Selecciona la casa:
       <select
+      className="form__houseLabel--select"
         name="house"
         id="house"
         onChange={handleChangeHouseSelect}

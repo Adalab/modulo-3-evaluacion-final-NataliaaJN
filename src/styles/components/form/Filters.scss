@@ -1,6 +1,18 @@
 .form {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin-bottom: 40px;
+
+  &__nameAndHouseFilter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+    height: 50px;
+  }
+  &__genderFilter{
+    width: 90px;
+    margin:0 200px;
+  }
 }

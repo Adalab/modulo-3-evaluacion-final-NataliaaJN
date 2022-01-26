@@ -7,17 +7,18 @@ const GenderFilter = (props) => {
     });
   };
   return (
-    <label htmlFor="gender">{props.label}
-      <input
-      className=""
-        type="radio"
-        name="gender"
-        id="gender"
-        value={props.gender}
-        onChange={handleChangeGenderFilter}
-        checked={props.genderFilter === props.gender}
-      />
-    </label>
+      <label className="form__genderFilter--genderLabel" htmlFor="gender">
+        {props.label}
+        <input
+          className="form__genderFilter--genderLabel--input"
+          type="radio"
+          name="gender"
+          id="gender"
+          value={props.gender}
+          onChange={handleChangeGenderFilter}
+          checked={props.genderFilter === props.gender}
+        />
+      </label>
   );
 };
 

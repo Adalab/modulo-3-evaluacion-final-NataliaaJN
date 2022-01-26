@@ -1,0 +1,10 @@
+@import "../../core/variables";
+.form__genderFilter--genderLabel{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $mainFontColor;
+        margin-bottom: 5px;
+    
+    
+}

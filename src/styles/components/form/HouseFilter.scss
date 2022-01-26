@@ -1,0 +1,17 @@
+@import "../../core/variables";
+.form__houseLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: $mainFontColor;
+  &--select {
+      width: 60%;
+    background-color: $mainColor;
+    color: $secondaryFontColor;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid $mainColor;
+    border-radius: 5px;
+  }
+}

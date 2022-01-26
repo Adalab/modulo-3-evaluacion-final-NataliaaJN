@@ -1,3 +1,4 @@
+import "../styles/components/form/NameFilter.scss";
 const NameFilter = (props) => {
   const handleChangeNameInput = (ev) => {
     props.handleInputs({
@@ -6,9 +7,10 @@ const NameFilter = (props) => {
     });
   };
   return (
-    <label htmlFor="name">
+    <label className="form__nameLabel" htmlFor="name">
       Buscar por personaje:
       <input
+      className="form__nameLabel--input"
         type="text"
         name="name"
         id="name"
