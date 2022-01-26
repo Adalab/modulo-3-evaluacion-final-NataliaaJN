@@ -12,7 +12,7 @@ const NameFilter = (props) => {
         type="text"
         name="name"
         id="name"
-        value={props.filterName}
+        value={props.nameFilter}
         onChange={handleChangeNameInput}
       />
     </label>

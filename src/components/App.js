@@ -19,12 +19,13 @@ const App = () => {
   // Effects
   // Cojo los datos del api
   useEffect(() => {
-    getApiData(houseFilter).then((data) => {
+    getApiData().then((data) => {
       setCharactersData(data); // filtro los resultados del api
     });
-  }, [houseFilter]);
+  }, []);
 
   // Functions
+
   // El parámetro data es un objeto al que le voy a pasar:
   // - un key, que es el nombre del input que voy a cambiar
   // - un value, que es el valor que voy a asignar a ese key
@@ -36,16 +37,15 @@ const App = () => {
     if (data.key === "house") {
       // si el key del objeto data es "name"
       setHouseFilter(data.value); // cambio el nameFilter por el valor que recibe en el objeto data
-    } else {
+    } else if(data.key === "gender"){
       setGenderFilter(data.value);
     }
   };
 
-  const resetFilters = () => {
-    setCharactersData([]);
-    setNameFilter("");
-    setHouseFilter("");
-  };
+  // const handleForm = (ev) => {
+  //   ev.preventDefault();
+  // };
+  
 
   // Filtro los personajes
   const filteredCharacter = charactersData
@@ -54,7 +54,13 @@ const App = () => {
         .toLocaleLowerCase()
         .includes(nameFilter.toLocaleLowerCase());
     }) // ordenar alfabéticamente el array filtrado
-    .filter((eachCharacterData) => eachCharacterData.house === houseFilter)
+    .filter((eachCharacterData) => {
+      if (houseFilter === "all") {
+        return true;
+      } else {
+        return eachCharacterData.house === houseFilter;
+      }
+    })
     .filter((eachCharacterData) =>
       genderFilter === "all" ? true : eachCharacterData.gender === genderFilter
     )
@@ -80,6 +86,13 @@ const App = () => {
     );
   };
 
+  const resetFilters = (ev) => {
+    ev.preventDefault();
+    setNameFilter("");
+    setHouseFilter("Gryffindor");
+    setGenderFilter("all");
+  };
+
   return (
     <div>
       <header>
@@ -92,6 +105,7 @@ const App = () => {
               nameFilter={nameFilter}
               houseFilter={houseFilter}
               genderFilter={genderFilter}
+              // handleForm={handleForm}
               handleInputs={handleInputs}
               resetFilters={resetFilters}
             />

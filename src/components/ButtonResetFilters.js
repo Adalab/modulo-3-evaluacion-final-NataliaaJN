@@ -1,5 +1,8 @@
 const ButtonResetFilters = (props) => {
-  return <button onClick={props.resetFilters}>Borrar filtros</button>;
+  const reset = (ev) => {
+props.resetFilters(ev);
+  };
+  return <button onClick={reset}>Borrar filtros</button>;
 };
 
 export default ButtonResetFilters;

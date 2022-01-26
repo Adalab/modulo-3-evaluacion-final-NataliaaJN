@@ -14,6 +14,7 @@ const HouseFilter = (props) => {
         onChange={handleChangeHouseSelect}
         value={props.houseFilter}
       >
+        <option value="all">Todas las casas</option>
         <option value="Gryffindor">Gryffindor</option>
         <option value="Slytherin">Slytherin</option>
         <option value="Hufflepuff">Hufflepuff</option>

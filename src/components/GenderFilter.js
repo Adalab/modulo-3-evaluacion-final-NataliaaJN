@@ -13,7 +13,7 @@ const GenderFilter = (props) => {
         id="gender"
         value={props.gender}
         onChange={handleChangeGenderFilter}
-        defaultChecked={props.genderFilter === props.gender}
+        checked={props.genderFilter === props.gender}
       />
     </label>
   );
