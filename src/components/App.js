@@ -19,10 +19,10 @@ const App = () => {
   // Effects
   // Cojo los datos del api
   useEffect(() => {
-    getApiData().then((data) => {
+    getApiData(houseFilter).then((data) => {
       setCharactersData(data); // filtro los resultados del api
     });
-  }, []);
+  }, [houseFilter]);
 
   // Functions
 
@@ -37,7 +37,7 @@ const App = () => {
     if (data.key === "house") {
       // si el key del objeto data es "name"
       setHouseFilter(data.value); // cambio el nameFilter por el valor que recibe en el objeto data
-    } else if(data.key === "gender"){
+    } else if (data.key === "gender") {
       setGenderFilter(data.value);
     }
   };
@@ -45,7 +45,6 @@ const App = () => {
   // const handleForm = (ev) => {
   //   ev.preventDefault();
   // };
-  
 
   // Filtro los personajes
   const filteredCharacter = charactersData
@@ -54,13 +53,7 @@ const App = () => {
         .toLocaleLowerCase()
         .includes(nameFilter.toLocaleLowerCase());
     }) // ordenar alfabéticamente el array filtrado
-    .filter((eachCharacterData) => {
-      if (houseFilter === "all") {
-        return true;
-      } else {
-        return eachCharacterData.house === houseFilter;
-      }
-    })
+    .filter((eachCharacterData) => eachCharacterData.house === houseFilter)
     .filter((eachCharacterData) =>
       genderFilter === "all" ? true : eachCharacterData.gender === genderFilter
     )

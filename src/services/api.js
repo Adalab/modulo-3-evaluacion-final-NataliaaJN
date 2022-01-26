@@ -1,10 +1,9 @@
 import { v4 as uuid } from 'uuid';
-const getApiData = () => {
+const getApiData = (house) => {
   const URL = "http://hp-api.herokuapp.com/api/characters/house/";
   const defaultImage= "https://via.placeholder.com/210x295/ffffff/666666/?text=Harry Potter";
   // Llamamos al API
-  //return fetch(URL + house)
-  return fetch("http://hp-api.herokuapp.com/api/characters")
+  return fetch(URL + house)
     .then((response) => response.json())
     .then((apiData) => {
       const cleanApiData = apiData.map((eachApiData) => {
