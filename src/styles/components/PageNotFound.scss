@@ -1,21 +1,32 @@
 @import "../core/variables";
-.pageNotFound{
+@font-face {
+  font-family: "HARRYP__.TTF";
+  src: url("../../fonts/HARRYP__.TTF") format("truetype");
+}
+.pageNotFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(../../images/dementors.jpg) center no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  &__title {
+    color: $mainFontColor;
+    font-family: "HARRYP__.TTF", sans-serif;
+    font-size: 35px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    color: $mainFontColor;
+  }
+  &__link {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: url(../../images/dementors.jpg) center no-repeat;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    &__title{
-        color: $mainFontColor;
-    }
-    &__link{
-        display: flex;
-        flex-direction: column-reverse;
-        color: $mainFontColor;
-    }
+    flex-direction: column-reverse;
+    color: $mainFontColor;
+  }
 }

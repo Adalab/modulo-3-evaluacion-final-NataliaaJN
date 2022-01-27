@@ -4,8 +4,8 @@ import broom from "../images/broom.png"
 const PageNotFound = () => {
     return (
         <article className="pageNotFound">
-            <h2>Error 404: página no encontrada</h2>
-          <h3 className="pageNotFound__title">
+            <h2 className="pageNotFound__title">Error 404: página no encontrada</h2>
+          <h3 className="pageNotFound__subtitle">
             ¡Ups! Parece que has excedido los límites de Howarts, aquí no podemos protegerte de los dementores
           </h3>
           
