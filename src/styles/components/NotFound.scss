@@ -1,0 +1,103 @@
+.homeLink {
+  z-index: 999;
+  position: absolute;
+  top: 85px;
+  left: 45px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(75, 11, 11, 0.822);
+  text-emphasis-color: rgba(75, 11, 11, 0.822);
+  @media (min-width: 500px) {
+    left: 90px;
+    top: 100px;
+  }
+  @media (min-width: 768px) {
+    font-size: 35px;
+  }
+  @media (min-width: 1000px) {
+      position: relative;
+      top: -100px;
+      left: 80px;
+}
+  @media (min-width: 1200px) {
+    top: 100px;
+    left: 170px;
+    color: rgb(173, 116, 41);
+  }
+}
+.characterNotFoundContainer {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../../images/maraudersMap.jpg) center no-repeat fixed;
+
+  @media (min-width: 768px) {
+    background-position: left;
+  }
+  
+  @media (min-width: 1400px) {
+    width: 100%;
+    height: 100vh;
+  }
+
+  &__textContainer {
+    width: 80%;
+    display: flex;
+    position: relative;
+    top: 160px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(75, 11, 11, 0.822);
+    box-shadow: 3px 3px 5px black;
+
+    @media (min-width: 500px) {
+      height: 200px;
+    }
+
+    @media (min-width: 768px) {
+      flex-direction: column;
+      height: 400px;
+      padding: 80px 50px;
+    }
+    
+    @media (min-width: 1200px) {
+        top: 280px;
+        padding: 150px;
+      }
+
+    &--paragraph1 {
+      font-size: 18px;
+      color: rgb(173, 116, 41);
+      border-right: 1px solid rgb(173, 116, 41);
+      padding-right: 2px;
+      @media (min-width: 500px) {
+        height: 100%;
+        padding-top: 30px;
+      }
+      @media (min-width: 768px) {
+        font-size: 25px;
+        border: none;
+        padding: 0;
+        text-align: center;
+      }
+    }
+    &--paragraph2 {
+      font-size: 18px;
+      color: rgb(173, 116, 41);
+      padding-left: 15px;
+      @media (min-width: 500px) {
+        padding-top: 30px;
+        height: 100%;
+      }
+      @media (min-width: 768px) {
+        font-size: 25px;
+        padding: 40px 0 0 0;
+        text-align: center;
+      }
+    }
+  }
+}
