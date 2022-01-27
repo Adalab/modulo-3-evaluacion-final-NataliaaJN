@@ -6,9 +6,7 @@ import NameFilter from "./NameFilter";
 
 const Filters = (props) => {
   const handleSubmit = (ev) => {
-    //props.handleForm(ev)
-    console.log("Hola");
-    ev.preventDefault();
+    props.handleForm(ev)
   };
   return (
     <section>

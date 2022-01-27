@@ -1,24 +1,23 @@
 @import "../core/variables";
 @font-face {
-    font-family: "HARRYP__.TTF";
-    src: url("../../fonts/HARRYP__.TTF") format("truetype");
-  }
-.header{
+  font-family: "HARRYP__.TTF";
+  src: url("../../fonts/HARRYP__.TTF") format("truetype");
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  font-family: "HARRYP__.TTF", sans-serif;
+  &__title {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-    font-family: "HARRYP__.TTF", sans-serif;
-    &__title{
-        width: 100%;
-        color: $mainFontColor;
-        font-size: 80px;
-        letter-spacing: 5px;
-        text-shadow: 4px 4px black, -2px -2px black;
-        text-align: center;
-        @media (min-width: 768px) {
-            font-size: 120px;
-          }
-
+    color: $mainFontColor;
+    font-size: 80px;
+    letter-spacing: 5px;
+    text-shadow: 4px 4px black, -2px -2px black;
+    text-align: center;
+    @media (min-width: 768px) {
+      font-size: 120px;
     }
+  }
 }

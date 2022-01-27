@@ -36,7 +36,6 @@
       align-items: flex-start;
       padding: 40px 30px;
     }
-   
 
     &__imageContainer {
       display: flex;
@@ -59,8 +58,8 @@
       margin: 25px 10px 10px 0;
       @media (min-width: 768px) {
         font-size: 55px;
-      letter-spacing: 2px;
-      margin: 5px 0 20px 0;
+        letter-spacing: 2px;
+        margin: 5px 0 20px 0;
       }
     }
     &__detailsList {

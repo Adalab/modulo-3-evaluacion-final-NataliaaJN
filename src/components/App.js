@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
-import { Route, Switch, Link, NavLink } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import getApiData from "../services/api";
 import ls from "../services/local-storage";
 
@@ -56,9 +56,9 @@ const App = () => {
     }
   };
 
-  // const handleForm = (ev) => {
-  //   ev.preventDefault();
-  // };
+  const handleForm = (ev) => {
+    ev.preventDefault();
+  };
 
   // Filtro los personajes
   const filterCharacters = (currentCharactersData) => {
@@ -67,13 +67,13 @@ const App = () => {
         return eachCharacterData.name
           .toLocaleLowerCase()
           .includes(nameFilter.toLocaleLowerCase());
-      }) // ordenar alfabéticamente el array filtrado
+      }) 
       .filter((eachCharacterData) => eachCharacterData.house === houseFilter)
       .filter((eachCharacterData) =>
         genderFilter === "all"
           ? true
           : eachCharacterData.gender === genderFilter
-      )
+      )// ordenar alfabéticamente el array filtrado
       .sort((a, b) => a.name.localeCompare(b.name));
     setFilteredCharacter(newFilteredCharacter);
   };
@@ -82,13 +82,17 @@ const App = () => {
     if (!nameFilter.trim()) {
       return (
         <>
-          <p className="characterNotFound">Introduce una búsqueda válida para filtrar por nombre</p>
+          <p className="characterNotFound">
+            Introduce una búsqueda válida para filtrar por nombre
+          </p>
           <CharactersList charactersData={filteredCharacter} />
         </>
       );
     } else if (nameFilter !== "" && filteredCharacter.length === 0) {
       return (
-        <p className="searchMessage">No se han encontrado personajes que coincidan con {nameFilter}</p>
+        <p className="searchMessage">
+          No se han encontrado personajes que coincidan con {nameFilter}
+        </p>
       );
     } else {
       {
@@ -113,7 +117,6 @@ const App = () => {
 
   // Eliminar filtros
   const resetFilters = (ev) => {
-    console.log("reset");
     ev.preventDefault();
     setNameFilter("");
     setHouseFilter("Gryffindor");
@@ -133,7 +136,7 @@ const App = () => {
               nameFilter={nameFilter}
               houseFilter={houseFilter}
               genderFilter={genderFilter}
-              //  handleForm={handleForm}
+               handleForm={handleForm}
               handleInputs={handleInputs}
               resetFilters={resetFilters}
             />

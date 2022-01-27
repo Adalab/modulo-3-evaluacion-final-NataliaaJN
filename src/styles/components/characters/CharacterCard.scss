@@ -9,22 +9,13 @@
   @media (min-width: 500px) {
     width: 100%;
   }
-  @media (min-width: 768px) {
-  }
-  @media (min-width: 1000px) {
-  }
-  @media (min-width: 1200px) {
-  }
+
   &__cardImageContainer {
     width: 220px;
     max-height: 280px;
     display: flex;
-    //border: 3px solid rgb(224, 188, 23);
     box-shadow: 2px 2px 5px $mainColor;
     margin-bottom: 15px;
-    @media (min-width: 500px) {
-      
-    }
     @media (min-width: 768px) {
       width: 110px;
       min-height: 200px;
@@ -32,13 +23,11 @@
     @media (min-width: 1000px) {
       width: 220px;
     }
-    @media (min-width: 1200px) {
-    }
+
     &--cardImage {
       width: 100%;
       min-height: 200px;
       object-fit: cover;
-      // object-position: 0 -40px;
     }
   }
 

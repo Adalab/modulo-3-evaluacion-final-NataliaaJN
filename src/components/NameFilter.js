@@ -1,11 +1,7 @@
 import "../styles/components/form/NameFilter.scss";
 const NameFilter = (props) => {
   const handleChangeNameInput = (ev) => {
-    //if (ev.keyCode === 13) {
-      ev.preventDefault();
-      console.log(ev);
-    //}
-
+    ev.preventDefault();
     props.handleInputs({
       key: "name",
       value: ev.currentTarget.value,
@@ -21,8 +17,8 @@ const NameFilter = (props) => {
         id="name"
         value={props.nameFilter}
         placeholder="Ej: Harry Potter"
-       onChange={handleChangeNameInput}
-        onKeyUp={(ev)=> ev.preventDefault()}
+        onChange={handleChangeNameInput}
+        onKeyUp={(ev) => ev.preventDefault()}
       />
     </label>
   );
