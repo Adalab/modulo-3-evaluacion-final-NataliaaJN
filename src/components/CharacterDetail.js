@@ -8,7 +8,7 @@ const CharacterDetail = (props) => {
       ""
     );
   const getGender = () =>
-    props.character.gender === "male" ? "Hombre" : "Mujer";
+    props.character.gender === "male" ? <span>Hombre <i className="fas fa-mars"></i></span> : <span>Mujer <i className="fas fa-venus"></i></span>;
 
   const getStatus = () => {
     if (props.character.status && props.character.gender === "male") {
@@ -25,7 +25,9 @@ const CharacterDetail = (props) => {
   const getSpecies = () => {
     // species: human, half-giant, werewolf, ghost
     if (props.character.species === "human") {
-      return "Humano";
+      return (
+        <span>Humano <i className="fas fa-user-alt"></i></span>
+        )
     } else if (props.character.species === "ghost") {
       return "Fantasma";
     } else if (props.character.species === "werewolf") {
@@ -57,8 +59,8 @@ const CharacterDetail = (props) => {
           <ul className="characterDetailContainer__detailsList">
             {getAlternateName()}
             <li>
-              <p className="characterDetailContainer__detailsList--detailInfo">
-                Estatus: {getStatus()}
+              <p className="characterDetailContainer__detailsList--detailInfo ">
+                Estatus: {getStatus()} <i className="fas fa-heartbeat"></i>
               </p>
             </li>
             <li>
