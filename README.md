@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# **Evaluación final Módulo 3**
+Bienvenid@s al repositorio del ejercicio final del Módulo 3:
+Podéis acceder a la web de [Harry Potter haciendo click aquí](http://beta.adalab.es/modulo-3-evaluacion-final-NataliaaJN/#/ "Harry Potter haciendo click aquí") o mediante el enlace que hay en la descripción.
+## Enunciado del ejercicio
+Este ejercicio consistía en desarrollar una página web con un listado de personajes de Harry Potter. Para ello, la aplicación debía conectarse al [API de Harry Potter](https://hp-api.herokuapp.com/ "API de Harry Potter"). 
+Y, en ella, el usuario podrá:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### - Filtrar por el nombre del personaje: 
+Al introducir un valor en un campo de texto del formulario, aparezca un listado de resultados de los personajes de Harry Potter cuyo nombre coincida con el valor introducido.
 
-## Available Scripts
+##### - Filtrado por casa: 
+Añadir un select a la interfaz, de forma que al seleccionar una casa, queden en la interfaz solo los personajes cuya casa es la seleccionada. Por defecto, cuando carga la página debe aparecer la casa gryffindor.
 
-In the project directory, you can run:
 
-### `npm start`
+##### - Detalle de personajes:
+Al hacer clic sobre la tarjeta de un personaje, su información aparecerá a pantalla completa.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##### - BONUS: Mejoras visuales
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##### - BONUS: URL de personaje inexistente
+Se debe mostrar un mensaje del tipo "El personaje que buscas no existe"
+##### - BONUS: Más filtros
 
-### `npm test`
+##### - BONUS: Boton Reset
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 🛠 Skills:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Los lenguajes y herramientas utilizadas en este proyecto son:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- JXS
+- CSS
+- React
+- Sass
+- Gulp
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Autor:
 
-### `npm run eject`
+- [@NataliaaJN](https://github.com/NataliaaJN):
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Nota:
+Si te surge alguna duda sobre este proyecto o tienes alguna sugerencia para mejorar esta web, no dudes en contactarme: atvnataliajn@gmail.com
