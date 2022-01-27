@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.2a4932b5.css",
-    "main.js": "./static/js/main.feea3460.js",
+    "main.css": "./static/css/main.4783d76d.css",
+    "main.js": "./static/js/main.43dee705.js",
     "static/media/maraudersMap.jpg": "./static/media/maraudersMap.f9ecfcca2cc5961261f9.jpg",
+    "static/media/dementors.jpg": "./static/media/dementors.36c6447d63f2c58f5835.jpg",
     "static/media/HARRYP__.TTF": "./static/media/HARRYP__.a65869c0c1a4b3d4fcfc.TTF",
     "static/media/defaultImage.jpg": "./static/media/defaultImage.de94f4d78d4396d37374.jpg",
     "index.html": "./index.html",
-    "main.2a4932b5.css.map": "./static/css/main.2a4932b5.css.map",
-    "main.feea3460.js.map": "./static/js/main.feea3460.js.map"
+    "main.4783d76d.css.map": "./static/css/main.4783d76d.css.map",
+    "main.43dee705.js.map": "./static/js/main.43dee705.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a4932b5.css",
-    "static/js/main.feea3460.js"
+    "static/css/main.4783d76d.css",
+    "static/js/main.43dee705.js"
   ]
 }
