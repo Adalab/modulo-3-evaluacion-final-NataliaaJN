@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.9675bdda.css",
-    "main.js": "./static/js/main.a83dd4bf.js",
-    "static/media/harry-potter-logo.png": "./static/media/harry-potter-logo.b5112d87319c9886380e.png",
+    "main.css": "./static/css/main.4641b90c.css",
+    "main.js": "./static/js/main.7115b067.js",
+    "static/media/maraudersMap.jpg": "./static/media/maraudersMap.f9ecfcca2cc5961261f9.jpg",
+    "static/media/HARRYP__.TTF": "./static/media/HARRYP__.a65869c0c1a4b3d4fcfc.TTF",
+    "static/media/defaultImage.jpg": "./static/media/defaultImage.de94f4d78d4396d37374.jpg",
     "index.html": "./index.html",
-    "main.9675bdda.css.map": "./static/css/main.9675bdda.css.map",
-    "main.a83dd4bf.js.map": "./static/js/main.a83dd4bf.js.map"
+    "main.4641b90c.css.map": "./static/css/main.4641b90c.css.map",
+    "main.7115b067.js.map": "./static/js/main.7115b067.js.map"
   },
   "entrypoints": [
-    "static/css/main.9675bdda.css",
-    "static/js/main.a83dd4bf.js"
+    "static/css/main.4641b90c.css",
+    "static/js/main.7115b067.js"
   ]
 }
