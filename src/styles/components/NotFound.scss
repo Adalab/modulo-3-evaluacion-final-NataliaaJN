@@ -25,6 +25,10 @@
     left: 170px;
     color: rgb(173, 116, 41);
   }
+  @media (min-width: 1400px) {
+    left: 250px;
+    
+  }
 }
 .characterNotFoundContainer {
   width: 100%;
@@ -41,6 +45,7 @@
   @media (min-width: 1400px) {
     width: 100%;
     height: 100vh;
+    background-position: center;
   }
 
   &__textContainer {
