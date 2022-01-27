@@ -9,6 +9,7 @@ import CharactersList from "./CharactersList";
 import CharacterDetail from "./CharacterDetail";
 import NotFound from "./NotFound";
 import Header from "./Header";
+import PageNotFound from "./PageNotFound";
 
 const App = () => {
   //                           STATES                               //
@@ -144,6 +145,7 @@ const App = () => {
           </main>
         </Route>
         <Route path="/character/:characterId" render={renderCharacterDetail} />
+        <Route component={PageNotFound}/>
       </Switch>
     </div>
   );
