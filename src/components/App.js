@@ -82,13 +82,13 @@ const App = () => {
     if (!nameFilter.trim()) {
       return (
         <>
-          <p>Introduce una búsqueda válida</p>
+          <p className="characterNotFound">Introduce una búsqueda válida para filtrar por nombre</p>
           <CharactersList charactersData={filteredCharacter} />
         </>
       );
     } else if (nameFilter !== "" && filteredCharacter.length === 0) {
       return (
-        <p>No se han encontrado personajes que coincidan con {nameFilter}</p>
+        <p className="searchMessage">No se han encontrado personajes que coincidan con {nameFilter}</p>
       );
     } else {
       {

@@ -20,6 +20,7 @@ const NameFilter = (props) => {
         name="name"
         id="name"
         value={props.nameFilter}
+        placeholder="Ej: Harry Potter"
        onChange={handleChangeNameInput}
         onKeyUp={(ev)=> ev.preventDefault()}
       />
