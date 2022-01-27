@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
 import "../styles/components/characters/CharacterDetail.scss";
+import giantIcon from "../images/giant.png"
 const CharacterDetail = (props) => {
   const getAlternateName = () =>
     props.character.alternate_names ? (
-      <p>{props.character.alternate_names}</p>
+      <p> {props.character.alternate_names} </p>
     ) : (
       ""
     );
   const getGender = () =>
-    props.character.gender === "male" ? <span>Hombre <i className="fas fa-mars"></i></span> : <span>Mujer <i className="fas fa-venus"></i></span>;
+    props.character.gender === "male" ? (
+      <span>
+        Hombre <i className="fas fa-mars"></i>
+      </span>
+    ) : (
+      <span>
+        Mujer <i className="fas fa-venus"></i>
+      </span>
+    );
 
   const getStatus = () => {
     if (props.character.status && props.character.gender === "male") {
@@ -26,14 +35,31 @@ const CharacterDetail = (props) => {
     // species: human, half-giant, werewolf, ghost
     if (props.character.species === "human") {
       return (
-        <span>Humano <i className="fas fa-user-alt"></i></span>
-        )
+        <span>
+          Humano <i className="fas fa-user-alt"></i>
+        </span>
+      );
     } else if (props.character.species === "ghost") {
-      return "Fantasma";
+      return (
+        <span>
+          Fantasma <i className="fas fa-ghost"></i>
+        </span>
+      );
     } else if (props.character.species === "werewolf") {
-      return "Hombre Lobo";
-    } else {
-      return "Semi gigante";
+      return (
+        <span>
+          Hombre Lobo
+          <img
+            alt="werewolf icon"
+            src="https://img.icons8.com/ios-filled/50/000000/werewolf.png"
+          />
+        </span>
+      );
+    } else if (props.character.species === "half-giant") {
+      <span>
+        Semi gigante
+        <img alt="half-giant icon" src={giantIcon} />
+      </span>;
     }
   };
 
