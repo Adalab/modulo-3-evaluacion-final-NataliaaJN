@@ -1,8 +1,8 @@
 import "../styles/components/characters/CharactersList.scss";
 import CharacterCard from "./CharacterCard";
 
-const CharactersList = (props) => {
-  const characterElements = props.charactersData.map(
+const CharactersList = ({charactersData}) => {
+  const characterElements = charactersData.map(
     (eachCharacterData, index) => {
       return (
         <li className="charactersListContainer__charactersList--item" key={index}>

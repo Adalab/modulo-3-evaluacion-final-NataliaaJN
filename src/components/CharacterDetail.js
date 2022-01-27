@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import "../styles/components/characters/CharacterDetail.scss";
 import giantIcon from "../images/giant.png"
-const CharacterDetail = (props) => {
+const CharacterDetail = ({character}) => {
   const getAlternateName = () =>
-    props.character.alternate_names ? (
-      <p> {props.character.alternate_names} </p>
+    character.alternate_names ? (
+      <p> {character.alternate_names} </p>
     ) : (
       ""
     );
   const getGender = () =>
-    props.character.gender === "male" ? (
+    character.gender === "male" ? (
       <span>
         Hombre <i className="fas fa-mars"></i>
       </span>
@@ -20,32 +20,32 @@ const CharacterDetail = (props) => {
     );
 
   const getStatus = () => {
-    if (props.character.status && props.character.gender === "male") {
+    if (character.status && character.gender === "male") {
       return "Vivo";
-    } else if (props.character.status && props.character.gender === "female") {
+    } else if (character.status && character.gender === "female") {
       return "Viva";
-    } else if (!props.character.status && props.character.gender === "male") {
+    } else if (!character.status && character.gender === "male") {
       return "Muerto";
-    } else if (!props.character.status && props.character.gender === "female") {
+    } else if (!character.status && character.gender === "female") {
       return "Muerta";
     }
   };
 
   const getSpecies = () => {
     // species: human, half-giant, werewolf, ghost
-    if (props.character.species === "human") {
+    if (character.species === "human") {
       return (
         <span>
           Humano <i className="fas fa-user-alt"></i>
         </span>
       );
-    } else if (props.character.species === "ghost") {
+    } else if (character.species === "ghost") {
       return (
         <span>
           Fantasma <i className="fas fa-ghost"></i>
         </span>
       );
-    } else if (props.character.species === "werewolf") {
+    } else if (character.species === "werewolf") {
       return (
         <span>
           Hombre Lobo
@@ -55,7 +55,7 @@ const CharacterDetail = (props) => {
           />
         </span>
       );
-    } else if (props.character.species === "half-giant") {
+    } else if (character.species === "half-giant") {
       <span>
         Semi gigante
         <img alt="half-giant icon" src={giantIcon} />
@@ -72,14 +72,14 @@ const CharacterDetail = (props) => {
         <div className="characterDetailContainer__imageContainer">
           <img
             className="characterDetailContainer__imageContainer--image"
-            title={props.character.name}
-            alt={props.character.name}
-            src={props.character.image}
+            title={character.name}
+            alt={character.name}
+            src={character.image}
           />
         </div>
         <div>
           <h2 className="characterDetailContainer__name">
-            {props.character.name}
+            {character.name}
           </h2>
 
           <ul className="characterDetailContainer__detailsList">
@@ -101,7 +101,7 @@ const CharacterDetail = (props) => {
             </li>
             <li>
               <p className="characterDetailContainer__detailsList--detailInfo">
-                Casa: {props.character.house}
+                Casa: {character.house}
               </p>
             </li>
           </ul>
