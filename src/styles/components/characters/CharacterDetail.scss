@@ -1,0 +1,48 @@
+@import "../../core/variables";
+@font-face {
+  font-family: "HARRYP__.TTF";
+  src: url("../../../fonts/HARRYP__.TTF") format("truetype");
+}
+
+.mainCharacterDetail {
+  width: 800px;
+  height: 600px;
+  margin: 80px auto;
+  .link {
+    color: $mainFontColor;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  .characterDetailContainer {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid black;
+    padding: 30px;
+    background-color: $mainColor;
+
+    &__imageContainer {
+      width: 240px;
+      margin-right: 70px;
+
+      &--image {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &__name {
+      font-family: "HARRYP__.TTF", sans-serif;
+      font-size: 55px;
+      letter-spacing: 2px;
+      margin: 5px 0 20px 0;
+    }
+    &__detailsList{
+       &--detailInfo{
+        font-size: 30px;
+       } 
+    }
+  }
+}

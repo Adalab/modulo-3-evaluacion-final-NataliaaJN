@@ -2,8 +2,14 @@
 @import "./core/variables";
 
 .app {
-  //background-color: rgb(101, 101, 138);
-  background-color: rgb(100, 25, 18);
+  height: 100%;
+  background-color: rgb(101, 101, 138);
+  //background-color: rgb(100, 25, 18);
   font-family: $mainFontFamily;
   padding: 40px;
+}
+
+.main{
+  min-height: 68vh;
+  color: $mainFontColor;
 }

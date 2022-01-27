@@ -1,6 +1,20 @@
+@import "../core/variables";
+@font-face {
+    font-family: "HARRYP__.TTF";
+    src: url("../../fonts/HARRYP__.TTF") format("truetype");
+  }
 .header{
     width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+    font-family: "HARRYP__.TTF", sans-serif;
+    &__title{
+        color: $mainFontColor;
+        font-size: 120px;
+        letter-spacing: 5px;
+        text-shadow: 4px 4px black, -2px -2px black;
+        
+
+    }
 }

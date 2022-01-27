@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/components/characters/CharacterDetail.scss";
 const CharacterDetail = (props) => {
   const getAlternateName = () =>
     props.character.alternate_names ? (
@@ -20,7 +21,7 @@ const CharacterDetail = (props) => {
       return "Muerta";
     }
   };
-  
+
   const getSpecies = () => {
     // species: human, half-giant, werewolf, ghost
     if (props.character.species === "human") {
@@ -35,27 +36,50 @@ const CharacterDetail = (props) => {
   };
 
   return (
-    <>
-      <Link to="/">Volver</Link>
-      <img alt={props.character.name} src={props.character.image} />
-      <h2>{props.character.name}</h2>
+    <div className="mainCharacterDetail">
+      <Link className="link" to="/">
+        Volver
+      </Link>
+      <div className="characterDetailContainer">
+        <div className="characterDetailContainer__imageContainer">
+          <img
+            className="characterDetailContainer__imageContainer--image"
+            title={props.character.name}
+            alt={props.character.name}
+            src={props.character.image}
+          />
+        </div>
+        <div>
+          <h2 className="characterDetailContainer__name">
+            {props.character.name}
+          </h2>
 
-      <ul>
-        {getAlternateName()}
-        <li>
-          <p>Estatus: {getStatus()}</p>
-        </li>
-        <li>
-          <p>Especie: {getSpecies()}</p>
-        </li>
-        <li>
-          <p>Género: {getGender()}</p>
-        </li>
-        <li>
-          <p>Casa: {props.character.house}</p>
-        </li>
-      </ul>
-    </>
+          <ul className="characterDetailContainer__detailsList">
+            {getAlternateName()}
+            <li>
+              <p className="characterDetailContainer__detailsList--detailInfo">
+                Estatus: {getStatus()}
+              </p>
+            </li>
+            <li>
+              <p className="characterDetailContainer__detailsList--detailInfo">
+                Especie: {getSpecies()}
+              </p>
+            </li>
+            <li>
+              <p className="characterDetailContainer__detailsList--detailInfo">
+                Género: {getGender()}
+              </p>
+            </li>
+            <li>
+              <p className="characterDetailContainer__detailsList--detailInfo">
+                Casa: {props.character.house}
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 };
 

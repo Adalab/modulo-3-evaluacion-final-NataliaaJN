@@ -62,7 +62,7 @@ const App = () => {
 
   // Filtro los personajes
   const filterCharacters = (currentCharactersData) => {
-    const newFilteredCharacter= currentCharactersData
+    const newFilteredCharacter = currentCharactersData
       .filter((eachCharacterData) => {
         return eachCharacterData.name
           .toLocaleLowerCase()
@@ -75,7 +75,7 @@ const App = () => {
           : eachCharacterData.gender === genderFilter
       )
       .sort((a, b) => a.name.localeCompare(b.name));
-      setFilteredCharacter(newFilteredCharacter);
+    setFilteredCharacter(newFilteredCharacter);
   };
   // Pintar resultados
   const renderSearchResults = () => {
@@ -126,9 +126,9 @@ const App = () => {
     <div className="app">
       <Header />
 
-      <main className="main">
-        <Switch>
-          <Route exact path="/">
+      <Switch>
+        <Route exact path="/">
+          <main className="main">
             <Filters
               nameFilter={nameFilter}
               houseFilter={houseFilter}
@@ -138,14 +138,10 @@ const App = () => {
               resetFilters={resetFilters}
             />
             {renderSearchResults()}
-          </Route>
-
-          <Route
-            path="/character/:characterId"
-            render={renderCharacterDetail}
-          />
-        </Switch>
-      </main>
+          </main>
+        </Route>
+        <Route path="/character/:characterId" render={renderCharacterDetail} />
+      </Switch>
     </div>
   );
 };
