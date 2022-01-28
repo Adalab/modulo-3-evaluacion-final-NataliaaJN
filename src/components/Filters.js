@@ -4,47 +4,58 @@ import GenderFilter from "./GenderFilter";
 import HouseFilter from "./HouseFilter";
 import NameFilter from "./NameFilter";
 
-const Filters = (props) => {
+import PropTypes from "prop-types";
+
+const Filters = ({handleForm, handleInputs, resetFilters, nameFilter, houseFilter, genderFilter}) => {
   const handleSubmit = (ev) => {
-    props.handleForm(ev)
+    handleForm(ev)
   };
   return (
     <section>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form__nameAndHouseFilter">
           <NameFilter
-            nameFilter={props.nameFilter}
-            handleInputs={props.handleInputs}
+            nameFilter={nameFilter}
+            handleInputs={handleInputs}
           />
           <HouseFilter
-            houseFilter={props.houseFilter}
-            handleInputs={props.handleInputs}
+            houseFilter={houseFilter}
+            handleInputs={handleInputs}
           />
         </div>
         <div className="form__genderFilter">
           <GenderFilter
-            genderFilter={props.genderFilter}
-            handleInputs={props.handleInputs}
+            genderFilter={genderFilter}
+            handleInputs={handleInputs}
             label="Todos"
             gender="all"
           />
           <GenderFilter
-            genderFilter={props.genderFilter}
-            handleInputs={props.handleInputs}
+            genderFilter={genderFilter}
+            handleInputs={handleInputs}
             label="Hombre"
             gender="male"
           />
           <GenderFilter
-            genderFilter={props.genderFilter}
-            handleInputs={props.handleInputs}
+            genderFilter={genderFilter}
+            handleInputs={handleInputs}
             label="Mujer"
             gender="female"
           />
         </div>
-      <ButtonResetFilters resetFilters={props.resetFilters} />
+      <ButtonResetFilters resetFilters={resetFilters} />
       </form>
     </section>
   );
+};
+
+Filters.propTypes = {
+  handleForm: PropTypes.func.isRequired,
+  handleInputs: PropTypes.func.isRequired,
+  resetFilters: PropTypes.func.isRequired,
+  nameFilter: PropTypes.string,
+  houseFilter: PropTypes.string,
+  genderFilter: PropTypes.string,
 };
 
 export default Filters;

@@ -1,7 +1,9 @@
 import "../styles/components/form/HouseFilter.scss";
-const HouseFilter = (props) => {
+import PropTypes from "prop-types";
+
+const HouseFilter = ({houseFilter, handleInputs}) => {
     const handleChangeHouseSelect = (ev) => {
-        props.handleInputs({
+        handleInputs({
             key: "house",
             value: ev.target.value,
         });
@@ -14,7 +16,7 @@ const HouseFilter = (props) => {
         name="house"
         id="house"
         onChange={handleChangeHouseSelect}
-        value={props.houseFilter}
+        value={houseFilter}
       >
         <option value="Gryffindor">Gryffindor</option>
         <option value="Slytherin">Slytherin</option>
@@ -23,6 +25,11 @@ const HouseFilter = (props) => {
       </select>
     </label>
   );
+};
+
+HouseFilter.propTypes={
+  houseFilter: PropTypes.string,
+  handleInputs: PropTypes.func.isRequired,
 };
 
 export default HouseFilter;

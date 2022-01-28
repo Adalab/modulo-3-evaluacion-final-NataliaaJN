@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import "../styles/components/form/ButtonResetFilters.scss";
 const ButtonResetFilters = (props) => {
   const reset = (ev) => {
@@ -9,5 +10,9 @@ const ButtonResetFilters = (props) => {
     </button>
   );
 };
+
+ButtonResetFilters.propTypes={
+  resetFilters: PropTypes.func.isRequired
+}
 
 export default ButtonResetFilters;

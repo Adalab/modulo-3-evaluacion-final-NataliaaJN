@@ -1,8 +1,10 @@
 import "../styles/components/form/NameFilter.scss";
-const NameFilter = (props) => {
+import PropTypes from "prop-types";
+
+const NameFilter = ({nameFilter, handleInputs}) => {
   const handleChangeNameInput = (ev) => {
     ev.preventDefault();
-    props.handleInputs({
+    handleInputs({
       key: "name",
       value: ev.currentTarget.value,
     });
@@ -15,13 +17,17 @@ const NameFilter = (props) => {
         type="search"
         name="name"
         id="name"
-        value={props.nameFilter}
+        value={nameFilter}
         placeholder="Ej: Harry Potter"
         onChange={handleChangeNameInput}
-        onKeyUp={(ev) => ev.preventDefault()}
       />
     </label>
   );
+};
+
+NameFilter.propTypes={
+  handleInputs: PropTypes.func.isRequired,
+  nameFilter: PropTypes.string,
 };
 
 export default NameFilter;
