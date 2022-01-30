@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import "../styles/components/characters/CharacterDetail.scss";
-import giantIcon from "../images/giant.png"
-const CharacterDetail = ({character}) => {
+import giantIcon from "../images/giant.png";
+const CharacterDetail = ({ character }) => {
   const getAlternateName = () =>
-    character.alternate_names ? (
-      <p> {character.alternate_names} </p>
-    ) : (
-      ""
-    );
+    character.alternate_names
+      ? character.alternate_names.map((alternate_name) => (
+          <p> {alternate_name} </p>
+        ))
+      : "";
+
   const getGender = () =>
     character.gender === "male" ? (
       <span>
@@ -56,10 +57,12 @@ const CharacterDetail = ({character}) => {
         </span>
       );
     } else if (character.species === "half-giant") {
-      <span>
-        Semi gigante
-        <img alt="half-giant icon" src={giantIcon} />
-      </span>;
+      return (
+        <span>
+          Semi gigante 
+          <img alt="half-giant icon" src={giantIcon} />
+        </span>
+      );
     }
   };
 
@@ -78,9 +81,7 @@ const CharacterDetail = ({character}) => {
           />
         </div>
         <div>
-          <h2 className="characterDetailContainer__name">
-            {character.name}
-          </h2>
+          <h2 className="characterDetailContainer__name">{character.name}</h2>
 
           <ul className="characterDetailContainer__detailsList">
             {getAlternateName()}

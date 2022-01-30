@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 import { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 import getApiData from "../services/api";
 import ls from "../services/local-storage";
 
@@ -23,13 +23,20 @@ const App = () => {
     ls.get("genderFilter", "all")
   );
 
+  const [loader, setLoader] = useState(true); // lo utilizo para que al recargar la página no me muestre otro resultado hasta que me devuelva los datos del api
+
   //                           EFFECTS                              //
   // Cojo los datos del api
   useEffect(() => {
     getApiData(houseFilter).then((data) => {
       setCharactersData(data); // filtro los resultados del api
       filterCharacters(data);
-    });
+      setLoader(false);
+    })
+    .catch((error)=>{
+      console.error(error);
+      setLoader(false)
+    })
   }, [houseFilter]);
 
   useEffect(() => {
@@ -68,13 +75,13 @@ const App = () => {
         return eachCharacterData.name
           .toLocaleLowerCase()
           .includes(nameFilter.toLocaleLowerCase());
-      }) 
+      })
       .filter((eachCharacterData) => eachCharacterData.house === houseFilter)
       .filter((eachCharacterData) =>
         genderFilter === "all"
           ? true
           : eachCharacterData.gender === genderFilter
-      )// ordenar alfabéticamente el array filtrado
+      ) // ordenar alfabéticamente el array filtrado
       .sort((a, b) => a.name.localeCompare(b.name));
     setFilteredCharacter(newFilteredCharacter);
   };
@@ -104,16 +111,20 @@ const App = () => {
   };
 
   // Ir a la página con información detallada de cada personaje
-  const renderCharacterDetail = (props) => {
-    const routeId = props.match.params.characterId;
-    const foundCharacter = charactersData.find(
-      (characterData) => characterData.id === routeId
-    );
-    return foundCharacter === undefined ? (
-      <NotFound />
-    ) : (
-      <CharacterDetail character={foundCharacter} />
-    );
+  const routeCharacterData = useRouteMatch("/character/:characterId");
+
+  const routeCharacterDetail = () => {
+    if (routeCharacterData && !loader) {
+      const routeCharacterName = routeCharacterData.params.characterId;
+      const foundCharacter = charactersData.find(
+        (characterData) => characterData.name === routeCharacterName
+      );
+      return !foundCharacter ? (
+        <NotFound />
+      ) : (
+        <CharacterDetail character={foundCharacter} />
+      );
+    }
   };
 
   // Eliminar filtros
@@ -137,15 +148,17 @@ const App = () => {
               nameFilter={nameFilter}
               houseFilter={houseFilter}
               genderFilter={genderFilter}
-               handleForm={handleForm}
+              handleForm={handleForm}
               handleInputs={handleInputs}
               resetFilters={resetFilters}
             />
             {renderSearchResults()}
           </main>
         </Route>
-        <Route path="/character/:characterId" render={renderCharacterDetail} />
-        <Route component={PageNotFound}/>
+        <Route path="/character/:characterId">
+          {routeCharacterDetail()}
+        </Route>
+        <Route component={PageNotFound} />
       </Switch>
     </div>
   );

@@ -16,7 +16,7 @@ const CharacterCard = ({eachCharacterData}) => {
   };
   return (
     <>
-      <Link className="cardLinkContainer" to={`/character/${eachCharacterData.id}`}>
+      <Link className="cardLinkContainer" to={`/character/${eachCharacterData.name}`}>
         <div className="cardLinkContainer__cardImageContainer">
         <img className="cardLinkContainer__cardImageContainer--cardImage"
           alt={eachCharacterData.name}
