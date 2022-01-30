@@ -5,8 +5,9 @@ import HouseFilter from "./HouseFilter";
 import NameFilter from "./NameFilter";
 
 import PropTypes from "prop-types";
+import SortFilter from "./SortFilter";
 
-const Filters = ({handleForm, handleInputs, resetFilters, nameFilter, houseFilter, genderFilter}) => {
+const Filters = ({handleForm, handleInputs, resetFilters, nameFilter, houseFilter, genderFilter, sortFilter}) => {
   const handleSubmit = (ev) => {
     handleForm(ev)
   };
@@ -42,6 +43,7 @@ const Filters = ({handleForm, handleInputs, resetFilters, nameFilter, houseFilte
             label="Mujer"
             gender="female"
           />
+          <SortFilter sortFilter={sortFilter} handleInputs={handleInputs} />
         </div>
       <ButtonResetFilters resetFilters={resetFilters} />
       </form>

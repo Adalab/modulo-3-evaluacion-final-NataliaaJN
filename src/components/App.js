@@ -22,29 +22,32 @@ const App = () => {
   const [genderFilter, setGenderFilter] = useState(
     ls.get("genderFilter", "all")
   );
+  const [sortFilter, setSortFilter] = useState(ls.get("sortFilter", false));
 
   const [loader, setLoader] = useState(true); // lo utilizo para que al recargar la página no me muestre otro resultado hasta que me devuelva los datos del api
 
   //                           EFFECTS                              //
   // Cojo los datos del api
   useEffect(() => {
-    getApiData(houseFilter).then((data) => {
-      setCharactersData(data); // filtro los resultados del api
-      filterCharacters(data);
-      setLoader(false);
-    })
-    .catch((error)=>{
-      console.error(error);
-      setLoader(false)
-    })
+    getApiData(houseFilter)
+      .then((data) => {
+        setCharactersData(data); // filtro los resultados del api
+        filterCharacters(data);
+        setLoader(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoader(false);
+      });
   }, [houseFilter]);
 
   useEffect(() => {
     ls.set("nameFilter", nameFilter);
     ls.set("houseFilter", houseFilter);
     ls.set("genderFilter", genderFilter);
+    ls.set("sortFilter", sortFilter);
     filterCharacters(charactersData);
-  }, [nameFilter, houseFilter, genderFilter]);
+  }, [nameFilter, houseFilter, genderFilter, sortFilter]);
 
   //                           FUNCTIONS                            //
 
@@ -61,6 +64,8 @@ const App = () => {
       setHouseFilter(data.value); // cambio el nameFilter por el valor que recibe en el objeto data
     } else if (data.key === "gender") {
       setGenderFilter(data.value);
+    } else if (data.key === "sort") {
+      setSortFilter(data.value);
     }
   };
 
@@ -81,8 +86,10 @@ const App = () => {
         genderFilter === "all"
           ? true
           : eachCharacterData.gender === genderFilter
-      ) // ordenar alfabéticamente el array filtrado
-      .sort((a, b) => a.name.localeCompare(b.name));
+      ); // ordenar alfabéticamente el array filtrado
+    if (sortFilter) {
+      newFilteredCharacter.sort((a, b) => a.name.localeCompare(b.name));
+    }
     setFilteredCharacter(newFilteredCharacter);
   };
   // Pintar resultados
@@ -133,6 +140,7 @@ const App = () => {
     setNameFilter("");
     setHouseFilter("Gryffindor");
     setGenderFilter("all");
+    setSortFilter(false);
   };
 
   //                          RENDER                  //
@@ -148,6 +156,7 @@ const App = () => {
               nameFilter={nameFilter}
               houseFilter={houseFilter}
               genderFilter={genderFilter}
+              sortFilter={sortFilter}
               handleForm={handleForm}
               handleInputs={handleInputs}
               resetFilters={resetFilters}
@@ -155,9 +164,7 @@ const App = () => {
             {renderSearchResults()}
           </main>
         </Route>
-        <Route path="/character/:characterId">
-          {routeCharacterDetail()}
-        </Route>
+        <Route path="/character/:characterId">{routeCharacterDetail()}</Route>
         <Route component={PageNotFound} />
       </Switch>
     </div>
