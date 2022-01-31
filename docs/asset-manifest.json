@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "./static/css/main.d62ccf6e.css",
-    "main.js": "./static/js/main.41dc588c.js",
+    "main.js": "./static/js/main.76397af3.js",
     "static/media/maraudersMap.jpg": "./static/media/maraudersMap.f9ecfcca2cc5961261f9.jpg",
     "static/media/dementors.jpg": "./static/media/dementors.36c6447d63f2c58f5835.jpg",
     "static/media/HARRYP__.TTF": "./static/media/HARRYP__.a65869c0c1a4b3d4fcfc.TTF",
     "static/media/defaultImage.jpg": "./static/media/defaultImage.de94f4d78d4396d37374.jpg",
     "index.html": "./index.html",
     "main.d62ccf6e.css.map": "./static/css/main.d62ccf6e.css.map",
-    "main.41dc588c.js.map": "./static/js/main.41dc588c.js.map"
+    "main.76397af3.js.map": "./static/js/main.76397af3.js.map"
   },
   "entrypoints": [
     "static/css/main.d62ccf6e.css",
-    "static/js/main.41dc588c.js"
+    "static/js/main.76397af3.js"
   ]
 }
