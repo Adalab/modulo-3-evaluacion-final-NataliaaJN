@@ -18,6 +18,7 @@ const getApiData = (house) => {
           species: eachApiData.species,
           gender: eachApiData.gender,
           house: eachApiData.house,
+        
         };
       });
       return cleanApiData;

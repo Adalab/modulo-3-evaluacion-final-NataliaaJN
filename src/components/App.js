@@ -23,6 +23,7 @@ const App = () => {
     ls.get("genderFilter", "all")
   );
   const [sortFilter, setSortFilter] = useState(ls.get("sortFilter", false));
+  const [statusFilter, setStatusFilter]= useState(ls.get("statusFilter", false));
 
   const [loader, setLoader] = useState(true); // lo utilizo para que al recargar la página no me muestre otro resultado hasta que me devuelva los datos del api
 
@@ -46,8 +47,9 @@ const App = () => {
     ls.set("houseFilter", houseFilter);
     ls.set("genderFilter", genderFilter);
     ls.set("sortFilter", sortFilter);
+    ls.set("statusFilter", statusFilter);
     filterCharacters(charactersData);
-  }, [nameFilter, houseFilter, genderFilter, sortFilter]);
+  }, [nameFilter, houseFilter, genderFilter, sortFilter, statusFilter]);
 
   //                           FUNCTIONS                            //
 
@@ -66,6 +68,8 @@ const App = () => {
       setGenderFilter(data.value);
     } else if (data.key === "sort") {
       setSortFilter(data.value);
+    } else if (data.key === "status"){
+      setStatusFilter(data.value);
     }
   };
 
@@ -86,7 +90,9 @@ const App = () => {
         genderFilter === "all"
           ? true
           : eachCharacterData.gender === genderFilter
-      ); // ordenar alfabéticamente el array filtrado
+      )
+      .filter((eachCharacterData) => !statusFilter ? true : eachCharacterData.status === false )
+       // ordenar alfabéticamente el array filtrado
     if (sortFilter) {
       newFilteredCharacter.sort((a, b) => a.name.localeCompare(b.name));
     }
@@ -157,6 +163,7 @@ const App = () => {
               houseFilter={houseFilter}
               genderFilter={genderFilter}
               sortFilter={sortFilter}
+              statusFilter={statusFilter}
               handleForm={handleForm}
               handleInputs={handleInputs}
               resetFilters={resetFilters}

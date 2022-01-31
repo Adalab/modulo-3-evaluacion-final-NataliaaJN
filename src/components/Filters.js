@@ -6,23 +6,27 @@ import NameFilter from "./NameFilter";
 
 import PropTypes from "prop-types";
 import SortFilter from "./SortFilter";
+import StatusFilter from "./StatusFilter";
 
-const Filters = ({handleForm, handleInputs, resetFilters, nameFilter, houseFilter, genderFilter, sortFilter}) => {
+const Filters = ({
+  handleForm,
+  handleInputs,
+  resetFilters,
+  nameFilter,
+  houseFilter,
+  genderFilter,
+  sortFilter,
+  statusFilter,
+}) => {
   const handleSubmit = (ev) => {
-    handleForm(ev)
+    handleForm(ev);
   };
   return (
     <section>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form__nameAndHouseFilter">
-          <NameFilter
-            nameFilter={nameFilter}
-            handleInputs={handleInputs}
-          />
-          <HouseFilter
-            houseFilter={houseFilter}
-            handleInputs={handleInputs}
-          />
+          <NameFilter nameFilter={nameFilter} handleInputs={handleInputs} />
+          <HouseFilter houseFilter={houseFilter} handleInputs={handleInputs} />
         </div>
         <div className="form__genderFilter">
           <GenderFilter
@@ -44,8 +48,15 @@ const Filters = ({handleForm, handleInputs, resetFilters, nameFilter, houseFilte
             gender="female"
           />
           <SortFilter sortFilter={sortFilter} handleInputs={handleInputs} />
+          <StatusFilter
+            statusFilter={statusFilter}
+            handleInputs={handleInputs}
+            label= "Muerto"
+            status= "dead"
+          />
+         
         </div>
-      <ButtonResetFilters resetFilters={resetFilters} />
+        <ButtonResetFilters resetFilters={resetFilters} />
       </form>
     </section>
   );
