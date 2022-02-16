@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import defaultImage from "../images/defaultImage.jpg";
 const getApiData = (house) => {
-  const URL = "http://hp-api.herokuapp.com/api/characters/house/";
+  const URL = "//hp-api.herokuapp.com/api/characters/house/";
   //const defaultImage= "https://via.placeholder.com/210x295/00000/ffffff/?text=";
  
   // Llamamos al API
