@@ -2,4 +2,43 @@ $mainFontFamily: "Roboto", sans-serif;
 $cardsTitleFont:'Cinzel', serif;
 $mainFontColor: rgb(230, 168, 36);
 $mainColor: rgb(230, 168, 36);
-$secondaryFontColor: rgba(75, 11, 11, 0.822);
+//$secondaryFontColor: rgba(75, 11, 11, 0.822);
+$secondaryFontColor: #4A171C;
+
+
+
+//
+// $backgroundColor: #F5E8D8;
+$backgroundColor: #ddd0c0;
+// Gryffyndor Colors
+$mainRedGryffyndor: #4A171C;
+$lightRedGryffyndor: #853A2F;
+$mainYellowGryffyndor: #C8963F;
+$darkYellowGryffyndor: #6E452B;
+$gryffyndorMainColor: $mainRedGryffyndor;
+$gryffyndorSecondaryColor: $mainYellowGryffyndor;
+
+// Slytherin
+$mainGreenSlytherin: #123824;
+$lightGreenSlytherin: #4E6656;
+$mainGreySlytherin: #A19E99;
+$darkGreySlytherin: #737075;
+$slytherinMainColor: $mainGreenSlytherin;
+$slytherinSecondaryColor: $mainGreySlytherin;
+
+// Ravenclaw
+$mainBlueRavenclaw: #073C5E;
+$darkBlueRavenclaw: #101F30;
+$mainGreyRavenclaw: #A19D99;
+$darkGreyRavenclaw: #737176;
+$ravenclawMainColor: $mainBlueRavenclaw;
+$ravenclawSecondaryColor: $mainGreyRavenclaw;
+
+
+// Hufflepuff
+$mainGreyHufflepuff: #565658;
+$darkGreyHufflepuff: #1F1E1B;
+$mainYellowHufflepuff: #C89641;
+$darkYellowHufflepuff: #A29F98;
+$hufflepuffMainColor: $mainGreyHufflepuff;
+$hufflepuffSecondaryColor: $mainYellowHufflepuff;

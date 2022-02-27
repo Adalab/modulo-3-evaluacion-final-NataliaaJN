@@ -4,28 +4,33 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  color: $mainFontColor;
+  color: $mainYellowGryffyndor;
+  letter-spacing: 1px;
   margin-bottom: 15px;
   text-transform: uppercase;
   font-size: 12px;
   @media (min-width: 768px) {
     flex-direction: row;
+    align-items: center;
     font-size: 16px;
   }
   &--input {
-    width: 60%;
     background-color: transparent;
-    color: $secondaryFontColor;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     border: 1px solid $mainColor;
     border-radius: 5px;
-    color: $mainFontColor;
+    margin-top: 5px;
+    color: $mainYellowGryffyndor;
+
+    @media (min-width: 768px) {
+      width: 55%;
+      margin-left: 50px;
+    }
   }
 }
 ::placeholder {
-  color: $mainFontColor;
-
+  color: $mainYellowGryffyndor;
   font-size: 12px;
   text-align: center;
   @media (min-width: 768px) {

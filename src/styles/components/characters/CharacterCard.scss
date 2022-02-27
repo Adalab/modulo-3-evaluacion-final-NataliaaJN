@@ -17,20 +17,38 @@
     box-shadow: 2px 2px 5px $mainColor;
     margin-bottom: 15px;
     @media (min-width: 768px) {
-      width: 110px;
+      width: 130px;
       min-height: 200px;
     }
-    @media (min-width: 1000px) {
-      width: 220px;
+    
+    @media (min-width: 1024px) {
+      width: 150px;
+      
     }
 
     &--cardImage {
       width: 100%;
       min-height: 200px;
       object-fit: cover;
+      object-position: 0px -30px;
+      @media (min-width: 768px) {
+        object-position: center;
+      }
+      @media (min-width: 1024px) {
+        // object-position: 0px -45px;
+        height: 100%;
+      }
     }
   }
 
+  &__cardInfoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: 768px) {
+    
+    }
+  }
   &__cardName {
     font-family: $cardsTitleFont;
     letter-spacing: 3px;
@@ -38,6 +56,9 @@
     color: $mainFontColor;
     text-shadow: 1px black;
     text-align: center;
+    @media (min-width: 768px) {
+    word-spacing: 100vh;
+    }
   }
   &__cardSpecies {
     color: rgb(230, 168, 36);

@@ -28,34 +28,38 @@ const Filters = ({
           <NameFilter nameFilter={nameFilter} handleInputs={handleInputs} />
           <HouseFilter houseFilter={houseFilter} handleInputs={handleInputs} />
         </div>
-        <div className="form__genderFilter">
-          <GenderFilter
-            genderFilter={genderFilter}
-            handleInputs={handleInputs}
-            label="Todos"
-            gender="all"
-          />
-          <GenderFilter
-            genderFilter={genderFilter}
-            handleInputs={handleInputs}
-            label="Hombre"
-            gender="male"
-          />
-          <GenderFilter
-            genderFilter={genderFilter}
-            handleInputs={handleInputs}
-            label="Mujer"
-            gender="female"
-          />
-          <SortFilter sortFilter={sortFilter} handleInputs={handleInputs} />
-          <StatusFilter
-            statusFilter={statusFilter}
-            handleInputs={handleInputs}
-            label= "Muerto"
-            status= "dead"
-          />
-         
+        <div className="form__genderSortStatusFilter">
+          <div className="form__genderSortStatusFilter--genderFilter">
+            <GenderFilter
+              genderFilter={genderFilter}
+              handleInputs={handleInputs}
+              label="Todos"
+              gender="all"
+            />
+            <GenderFilter
+              genderFilter={genderFilter}
+              handleInputs={handleInputs}
+              label="Hombre"
+              gender="male"
+            />
+            <GenderFilter
+              genderFilter={genderFilter}
+              handleInputs={handleInputs}
+              label="Mujer"
+              gender="female"
+            />
+          </div>
+          <div className="form__genderSortStatusFilter--sortStatusFilterContainer">
+            <SortFilter sortFilter={sortFilter} handleInputs={handleInputs} />
+            <StatusFilter
+              statusFilter={statusFilter}
+              handleInputs={handleInputs}
+              label="Muerto"
+              status="dead"
+            />
+          </div>
         </div>
+
         <ButtonResetFilters resetFilters={resetFilters} />
       </form>
     </section>

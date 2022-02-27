@@ -104,7 +104,7 @@ const App = () => {
       return (
         <>
           <p className="characterNotFound">
-            Introduce una búsqueda válida para filtrar por nombre
+            *Introduce una búsqueda válida para filtrar por nombre
           </p>
           <CharactersList charactersData={filteredCharacter} />
         </>

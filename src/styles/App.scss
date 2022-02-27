@@ -4,18 +4,28 @@
 .app {
   height: 100%;
   min-height: 100vh;
-  background-color: rgb(101, 101, 138);
-  font-family: $mainFontFamily;
-  padding: 40px 20px;
+  // background-color: rgb(101, 101, 138);
   @media (min-width: 768px) {
-    padding: 40px;
-  }
+      padding: 40px;
+    }
+      background-color: $backgroundColor;
+     font-family: $mainFontFamily;
+     padding: 40px 20px;
+     background: url(../images/background6.jpg) center no-repeat fixed ;
+     background-size: cover;
+     filter: contrast(70%) brightness(100%);
+     
 }
 
 .main{
   width: 100%;
   min-height: 68vh;
-  color: $mainFontColor;
+  color: $mainYellowGryffyndor;
   display: flex;
   flex-direction: column;
+  font-family: $mainFontFamily;
+  padding: 0px 20px 40px 20px;
+  @media (min-width: 768px) {
+    padding: 0 20px 40px 20px;
+  }
 }

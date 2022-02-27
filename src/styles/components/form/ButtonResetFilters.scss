@@ -1,20 +1,29 @@
 @import "../../core/variables";
 .form__btnReset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 20px;
-  padding: 5px;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  background-color: rgba(58, 5, 5, 0.822);
-  box-shadow: 4px 4px 5px black;
-  color: $mainFontColor;
+  width: 80%;
+  text-align: left;
+  font-family: $mainFontFamily;
   font-size: 10px;
+  letter-spacing: 1px;
+  background-color: #e4be7d;
+  padding: 10px 5px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px black;
+  color: black;
   cursor: pointer;
+  margin-top: 5px;
   @media (min-width: 768px) {
-    height: 50px;
-    padding: 5px;
+    width: 600px;
+    padding: 12px 0;
     font-size: 16px;
   }
-
+  .fa-solid {
+    margin-left: 5px;
+  }
   &:hover {
     box-shadow: 5px 5px 7px rgb(224, 188, 23);
   }

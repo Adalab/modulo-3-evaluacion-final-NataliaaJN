@@ -6,7 +6,7 @@ const ButtonResetFilters = (props) => {
   };
   return (
     <button type="reset" className="form__btnReset" onClick={reset}>
-      Borrar filtros
+      Borrar filtros <i className="fa-solid fa-filter-circle-xmark"></i>
     </button>
   );
 };

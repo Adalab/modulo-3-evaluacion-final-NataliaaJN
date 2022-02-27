@@ -5,7 +5,7 @@ const CharacterDetail = ({ character }) => {
   const getAlternateName = () =>
     character.alternate_names
       ? character.alternate_names.map((alternate_name) => (
-          <p> {alternate_name} </p>
+          <p className="alternateName"> {alternate_name} </p>
         ))
       : "";
 
@@ -51,6 +51,7 @@ const CharacterDetail = ({ character }) => {
         <span>
           Hombre Lobo
           <img
+            className="specieIcon"
             alt="werewolf icon"
             src="https://img.icons8.com/ios-filled/50/000000/werewolf.png"
           />
@@ -59,8 +60,8 @@ const CharacterDetail = ({ character }) => {
     } else if (character.species === "half-giant") {
       return (
         <span>
-          Semi gigante 
-          <img alt="half-giant icon" src={giantIcon} />
+          Semi gigante
+          <img className="specieIcon" alt="half-giant icon" src={giantIcon} />
         </span>
       );
     }
@@ -80,7 +81,7 @@ const CharacterDetail = ({ character }) => {
             src={character.image}
           />
         </div>
-        <div>
+        <div className="characterDetailContainer__characterWrapper">
           <h2 className="characterDetailContainer__name">{character.name}</h2>
 
           <ul className="characterDetailContainer__detailsList">

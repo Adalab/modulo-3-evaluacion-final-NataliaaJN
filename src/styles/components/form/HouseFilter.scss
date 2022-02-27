@@ -4,25 +4,33 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  color: $mainFontColor;
+  color: $mainYellowGryffyndor;
   text-transform: uppercase;
   font-size: 12px;
+  letter-spacing: 1px;
+  padding-top: 25px;
   @media (min-width: 768px) {
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     font-size: 16px;
+    padding-top: 10px;
   }
   &--select {
-    width: 60%;
+    width: 80%;
     background-color: $mainColor;
     color: $secondaryFontColor;
     font-weight: bold;
+    font-size: 12px;
+    text-align: center;
     padding: 5px;
     border: 1px solid $mainColor;
     border-radius: 5px;
-    font-size: 12px;
-    text-align: center;
+    margin-top: 5px;
     @media (min-width: 768px) {
       font-size: 16px;
+      width: 55%;
+      margin-left: 50px;
     }
   }
 }
