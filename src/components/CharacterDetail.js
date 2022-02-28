@@ -72,7 +72,7 @@ const CharacterDetail = ({ character }) => {
       <Link className="link" to="/">
         Volver
       </Link>
-      <div className="characterDetailContainer">
+      <div className={`characterDetailContainer characterDetailContainer${character.house}`}>
         <div className="characterDetailContainer__imageContainer">
           <img
             className="characterDetailContainer__imageContainer--image"
