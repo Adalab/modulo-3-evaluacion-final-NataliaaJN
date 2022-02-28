@@ -36,7 +36,7 @@
     border-radius: 10px;
     padding: 40px 0;
     box-shadow: -10px 15px 10px black;
-    background-color: $gryffyndorMainColor;
+    // background-color: $gryffyndorMainColor;
 
     @media (min-width: 768px) {
       height: 100%;
@@ -54,7 +54,6 @@
       padding: 25px;
       border-radius: 30px;
       margin-top: 20px;
-      background-color: #c8963fb9;
 
       @media (min-width: 768px) {
         width: 60%;
@@ -92,17 +91,22 @@
       max-width: 140px;
       @media (min-width: 400px) {
         max-width: 180px;
+        min-width: 180px;
       
       }
 
       @media (min-width: 768px) {
-        min-width: 150px;
+        //min-width: 150px;
+        min-height: 150px;
+        max-height: 210px;
+        // max-width: 180px;
         width: 200px;
         margin-right: 70px;
       }
       &--image {
         width: 100%;
         object-fit: cover;
+        object-position: 0 0.01px;
         border-radius: 10px;
         box-shadow: 0 0 8px 3px $darkYellowGryffyndor;
       }
@@ -127,4 +131,34 @@
   color: $mainRedGryffyndor;
   font-weight: bold;
   display: block;
+}
+
+
+// Styles for each house
+.characterDetailContainerGryffindor{
+  background-color: $gryffyndorMainColor;
+  .characterWrapperGryffindor{
+    background-color: #c8963fb9;
+  }
+}
+
+.characterDetailContainerSlytherin{
+  background-color: $slytherinMainColor;
+  .characterWrapperSlytherin{
+    background-color: #a19e99b2;
+  }
+}
+
+.characterDetailContainerRavenclaw{
+  background-color: $ravenclawMainColor;
+  .characterWrapperRavenclaw{
+    background-color: #A19D99;
+  }
+}
+
+.characterDetailContainerHufflepuff{
+  background-color: $hufflepuffMainColor;
+  .characterWrapperHufflepuff{
+    background-color: #c89641af;
+  }
 }

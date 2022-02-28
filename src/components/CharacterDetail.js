@@ -81,7 +81,7 @@ const CharacterDetail = ({ character }) => {
             src={character.image}
           />
         </div>
-        <div className="characterDetailContainer__characterWrapper">
+        <div className={`characterDetailContainer__characterWrapper characterWrapper${character.house}`}>
           <h2 className="characterDetailContainer__name">{character.name}</h2>
 
           <ul className="characterDetailContainer__detailsList">
