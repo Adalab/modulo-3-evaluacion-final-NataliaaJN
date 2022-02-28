@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.d62ccf6e.css",
-    "main.js": "./static/js/main.b04aa3a0.js",
+    "main.css": "./static/css/main.56cd71dc.css",
+    "main.js": "./static/js/main.6c2352b4.js",
+    "static/media/background6.jpg": "./static/media/background6.20c74704c5803dfa713a.jpg",
     "static/media/maraudersMap.jpg": "./static/media/maraudersMap.f9ecfcca2cc5961261f9.jpg",
+    "static/media/howarts-background.jpg": "./static/media/howarts-background.7b940628ad7779fd61ae.jpg",
     "static/media/dementors.jpg": "./static/media/dementors.36c6447d63f2c58f5835.jpg",
     "static/media/HARRYP__.TTF": "./static/media/HARRYP__.a65869c0c1a4b3d4fcfc.TTF",
     "static/media/defaultImage.jpg": "./static/media/defaultImage.de94f4d78d4396d37374.jpg",
     "index.html": "./index.html",
-    "main.d62ccf6e.css.map": "./static/css/main.d62ccf6e.css.map",
-    "main.b04aa3a0.js.map": "./static/js/main.b04aa3a0.js.map"
+    "main.56cd71dc.css.map": "./static/css/main.56cd71dc.css.map",
+    "main.6c2352b4.js.map": "./static/js/main.6c2352b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.d62ccf6e.css",
-    "static/js/main.b04aa3a0.js"
+    "static/css/main.56cd71dc.css",
+    "static/js/main.6c2352b4.js"
   ]
 }
