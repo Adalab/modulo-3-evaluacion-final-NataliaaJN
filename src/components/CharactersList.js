@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/components/characters/CharactersList.scss";
 import CharacterCard from "./CharacterCard";
 import hogwartsShield from "../images/hogwartsShield.png";
@@ -13,11 +14,16 @@ const CharactersList = ({ charactersData }) => {
           <CharacterCard eachCharacterData={eachCharacterData} />
         </li>
         <li className="back">
+        <Link
+        className="cardLinkContainer"
+        to={`/character/${eachCharacterData.name}`}
+      > 
           <img
             className="back__hogwartsShield"
             alt="Escudo de Hogwarts"
             src={hogwartsShield}
           />
+        </Link>
         </li>
       </div>
     );

@@ -19,44 +19,47 @@
     @media (min-width: 768px) {
       width: 130px;
       min-height: 200px;
+      margin-bottom: 0;
     }
-    
+
     @media (min-width: 1024px) {
       width: 150px;
-      
     }
 
     &--cardImage {
       width: 100%;
       min-height: 200px;
       object-fit: cover;
-      object-position: 0px -30px;
+      object-position: 0px 10px;
       @media (min-width: 768px) {
         object-position: center;
       }
       @media (min-width: 1024px) {
-        height: 100%;
+        // height: 100%;
+        height: 230px;
       }
     }
   }
 
-  &__cardInfoContainer{
+  &__cardInfoContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 15px 35px 15px;
     @media (min-width: 768px) {
-    
+      padding: 0;
     }
   }
   &__cardName {
     font-family: $cardsTitleFont;
     letter-spacing: 3px;
     margin-bottom: 2px;
-    color: $mainFontColor;
+    color: rgb(230, 168, 36);
     text-shadow: 1px black;
     text-align: center;
     @media (min-width: 768px) {
-    word-spacing: 100vh;
+      word-spacing: 100vh;
+      color: rgb(230, 168, 36);
     }
   }
   &__cardSpecies {
