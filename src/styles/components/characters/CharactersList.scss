@@ -87,8 +87,6 @@
         padding: 40px 10px;
         border-radius: 10px;
         outline: none;
-        background-color: rgba(75, 11, 11, 0.822);
-        box-shadow: 1px 1px 6px 4px $lightRedGryffyndor;
       }
       @media (min-width: 1024px) {
         height: 420px;
@@ -102,13 +100,40 @@
       &:hover {
         transform: scale(105%);
         top: -5px;
-        // box-shadow: 1px 1px 6px 4px $mainYellowGryffyndor;
-        // box-shadow: 1px 1px 6px 4px $lightRedGryffyndor;
         @media (min-width: 768px) {
           box-shadow: 1px 1px 6px 4px $mainYellowGryffyndor;
         }
       }
     }
+  }
+}
+
+// Card colors for each house
+.cardGryffindor {
+  @media (min-width: 768px) {
+    background-color: rgba(75, 11, 11, 0.822);
+  box-shadow: 1px 1px 6px 4px $lightRedGryffyndor;
+  }
+}
+
+.cardSlytherin {
+  @media (min-width: 768px) {
+    background-color: #123824c0;
+  box-shadow: 1px 1px 6px 4px $mainGreenSlytherin;
+  }
+}
+
+.cardRavenclaw {
+  @media (min-width: 768px) {
+    background-color: #101F30;
+  box-shadow: 1px 1px 6px 4px $ravenclawMainColor;
+  }
+}
+
+.cardHufflepuff {
+  @media (min-width: 768px) {
+    background-color: #565658;
+  box-shadow: 1px 1px 6px 4px $darkGreyHufflepuff;
   }
 }
 

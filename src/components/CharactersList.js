@@ -8,7 +8,7 @@ const CharactersList = ({ charactersData }) => {
     return (
       <div className="hoverContainer">
         <li
-          className="charactersListContainer__charactersList--item front "
+          className={`charactersListContainer__charactersList--item card${eachCharacterData.house} front`}
           key={index}
         >
           <CharacterCard eachCharacterData={eachCharacterData} />
