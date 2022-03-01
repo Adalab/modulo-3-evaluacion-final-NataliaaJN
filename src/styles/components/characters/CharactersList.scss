@@ -78,7 +78,6 @@
       }
 
       @media (min-width: 768px) {
-        // width: 240px;
         width: 230px;
         min-height: 390px;
         max-height: 390px;
@@ -104,4 +103,67 @@
       }
     }
   }
+}
+
+.hoverContainer {
+  position: relative;
+  width: 200px;
+  height: 385px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 768px) {
+    width: 235px;
+    height: 380px;
+  }
+  @media (min-width: 1024px) {
+    width: 235px;
+    height: 390px;
+  }
+  @media (min-width: 1200px) {
+    height: 400px;
+  }
+  @media (min-width: 1400px) {
+    width: 305px;
+    height: 400px;
+  }
+}
+
+.front,
+.back {
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform 0.6s linear;
+}
+
+.front {
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 99%;
+  transform: perspective(600px) rotateY(180deg);
+
+  min-height: 390px;
+  max-height: 390px;
+  margin: 0;
+  padding: 40px 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.822);
+  box-shadow: 1px 1px 6px 4px $lightRedGryffyndor;
+  &__hogwartsShield {
+    width: 80%;
+  }
+}
+
+.hoverContainer:hover > .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.hoverContainer:hover > .back {
+  transform: perspective(600px) rotateY(0deg);
 }
