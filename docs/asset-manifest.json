@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.008813f8.css",
-    "main.js": "./static/js/main.be03b64f.js",
+    "main.css": "./static/css/main.915af283.css",
+    "main.js": "./static/js/main.f3ac5a28.js",
     "static/media/background6.jpg": "./static/media/background6.20c74704c5803dfa713a.jpg",
     "static/media/maraudersMap.jpg": "./static/media/maraudersMap.f9ecfcca2cc5961261f9.jpg",
     "static/media/hogwartsShield.png": "./static/media/hogwartsShield.7f1a917552a188226bac.png",
@@ -10,11 +10,11 @@
     "static/media/HARRYP__.TTF": "./static/media/HARRYP__.a65869c0c1a4b3d4fcfc.TTF",
     "static/media/defaultImage.jpg": "./static/media/defaultImage.bffdf58fcf74a363abb4.jpg",
     "index.html": "./index.html",
-    "main.008813f8.css.map": "./static/css/main.008813f8.css.map",
-    "main.be03b64f.js.map": "./static/js/main.be03b64f.js.map"
+    "main.915af283.css.map": "./static/css/main.915af283.css.map",
+    "main.f3ac5a28.js.map": "./static/js/main.f3ac5a28.js.map"
   },
   "entrypoints": [
-    "static/css/main.008813f8.css",
-    "static/js/main.be03b64f.js"
+    "static/css/main.915af283.css",
+    "static/js/main.f3ac5a28.js"
   ]
 }
