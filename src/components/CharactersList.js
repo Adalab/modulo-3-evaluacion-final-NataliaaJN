@@ -6,10 +6,10 @@ import hogwartsShield from "../images/hogwartsShield.png";
 const CharactersList = ({ charactersData }) => {
   const characterElements = charactersData.map((eachCharacterData, index) => {
     return (
-      <div className="hoverContainer">
+      <div className="hoverContainer" key={index}>
         <li
           className={`charactersListContainer__charactersList--item card${eachCharacterData.house} front`}
-          key={index}
+          
         >
           <CharacterCard eachCharacterData={eachCharacterData} />
         </li>
